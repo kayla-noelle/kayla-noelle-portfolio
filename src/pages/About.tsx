@@ -9,6 +9,7 @@ export default function About() {
         <p>In my spare time, I am usually feeding that same love of learning –– whether it’s solving Wordle, Sudoku, or crossword puzzles or diving into a good mystery novel. Of course, when I need a break from all the problem solving…I head to the gym 💪
   </p>
       </section>
-  
+
     );
   }
+  

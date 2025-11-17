@@ -1,43 +1,22 @@
-import { useState } from 'react'
-import './App.css'
-import { BrowserRouter } from "react-router-dom";
-import App from "./App.jsx";
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Projects from "./pages/Projects";
-import Navbar from "./components/Navbar";
+import Home from "./pages/Home.tsx";
+import About from "./pages/About.tsx";
+import Resume from "./pages/Resume.tsx";
+import Navbar from "./components/Navbar.tsx";
 
-export default function App() {
+ function App() {
   return (
     <>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Projects />} />
+        <Route path="/projects" element={<Resume />} />
       </Routes>
     </>
   );
 }
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
-);
-
-function App() {
-  return (
-    <div className="bg-gray-50 text-gray-900 font-sans min-h-screen">
-      <Header />
-      <Hero />
-      <About />
-      <Resume />
-      <Skills />
-    </div>
-  );
-}
 
 // Header / Navigation Component
 function Header() {
@@ -52,32 +31,5 @@ function Header() {
       </nav>
     </header>
   );
-}
-
-// Hero Section
-function Hero() {
-  return (
-    <section className="max-w-3xl mx-auto text-center py-20 px-6">
-      <h1 className="text-4xl md:text-5xl font-bold mb-4">Hi, I'm Kayla Chavez</h1>
-      <h3 className="text-lg md:text-xl text-gray-700 mb-8">
-        I'm a Front-End Developer. I love combining technical skills with design thinking to create smooth, user-centered digital experiences.
-      </h3>
-    </section>
-  );
-}
-
-function Skills(){
-  return(
-    <section id="skills" className="max-w-4xl mx-auto px-6 pb-20">
-      <ul>
-        <li>JavaScript</li>
-        <li>HTML5</li>
-        <li>CSS</li>
-        <li>Adobe Suite</li>
-        <li>Figma</li>
-        <li>Shopify</li>
-      </ul>
-    </section>
-  )
 }
 export default App;
