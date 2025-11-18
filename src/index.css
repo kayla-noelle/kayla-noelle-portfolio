@@ -8,6 +8,14 @@ html, body {
 }
 
 @layer utilities {
+   @keyframes blink {
+    0%, 100%{
+      opacity:1
+    }
+    50% {
+      opacity:0
+    }
+  }
   @keyframes loading {
     0%{
       transform: translateX(-100%);
@@ -15,6 +23,9 @@ html, body {
     100%{
       transform: translateX(250%);
     }
+  }
+  .animate-blink {
+    animation: blink 1s step-start infinite;
   }
   .animate-loading-bar {
     animation: loading 0.8s ease infinite;
