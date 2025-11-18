@@ -6,6 +6,7 @@ export default function Navbar() {
       <Link to="/" className="hover:opacity-70">Home</Link>
       <Link to="/about" className="hover:opacity-70">About</Link>
       <Link to="/resume" className="hover:opacity-70">Resume</Link>
+      <Link to="/contact" className="hover:opacity-70">Contact</Link>
     </nav>
   );
 }

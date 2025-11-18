@@ -12,7 +12,7 @@ import Navbar from "./components/Navbar.tsx";
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Resume />} />
+        <Route path="/resume" element={<Resume />} />
         <Route path="/contact" element={<Contact />}/>
       </Routes>
     </>
