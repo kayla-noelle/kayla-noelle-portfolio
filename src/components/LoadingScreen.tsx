@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 export const LoadingScreen = ({onComplete}) => {
   const [text,setText] = useState("")
   const fullText = "<Hello World />";
