@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar.tsx";
 import { useState } from "react";
  function App() {
   const [isLoaded, setIsLoaded] =  useState (false);
-  const [menuOpen, setMenuOpen] =  useState (false);
+  const [menuOpen, setMenuOpen] =  useState<boolean> (false);
   return (
     <>
     {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />} {" "}
