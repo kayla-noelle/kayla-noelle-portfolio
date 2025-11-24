@@ -1,12 +1,23 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html, body {
   margin:0;
   padding:0;
-  font-family: 'Open Sans', sans-serif;
-  background: #000;
-  color: #f9f9f9;
+  font-family: 'Roboto', sans-serif;
+  background: #FBFBFF; /*light mode background*/
+  color: #121212; /*light mode text color*/
 }
+@media (prefers-color-scheme: dark) {
+  html, body {
+    background: #111827; /*dark mode background*/
+    color: #FBFBFF; /*dark mode text color*/
+  }
 
+}
 @layer utilities {
    @keyframes blink {
     0%, 100%{
