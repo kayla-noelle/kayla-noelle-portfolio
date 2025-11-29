@@ -28,7 +28,7 @@ export default function Contact() {
       <RevealOnScroll>
         <div className="px-4 w-full max-w-3xl flex flex-col md:flex-row gap-6">
           <h2 className="w-full md:w-1/2 text-gray-900 dark:text-white text-4xl font-bold mb-8">Get in Touch</h2>
-          <form className="w-full md:w-1/2 space-y-6" onSubmit={handleSubmit}>
+          <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="relative">
               <input 
               type="text" 
