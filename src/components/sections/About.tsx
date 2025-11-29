@@ -6,7 +6,7 @@ export default function About() {
     return (
       <section id="about" className="bg-white dark:bg-gray-900 min-h-screen flex items-center justify-center py-20">
         <RevealOnScroll>
-        <div className="max-w-3xl mx-auto px-4">
+        <div className="max-w-3xl mx-auto px-4 flex flex-col md:flex-row gap-6">
           <h2 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white text-center">About Me</h2>
           <div className="glass rounded-xl p-8 border-white/10 border hover:-translate-y-1 transition-all">
             <p className=" text-left text-gray-900 dark:text-gray-300 mb-6">
