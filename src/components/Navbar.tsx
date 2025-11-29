@@ -13,7 +13,7 @@ export default function Navbar({ menuOpen, setMenuOpen }: { menuOpen: boolean; s
         <div className="flex justify-between items-center h-16">
           <a href="#home" className="font-sans text-lg font-bold text-gray-900 dark:text-white">{" "}Kayla Noelle</a>
 
-          <div className="w-7 h-5 relative cursor-pointer z-40 md:hidden absolute right-4" onClick={() => setMenuOpen(prev => !prev)}>
+          <div className="w-7 h-5 relative text-3xl cursor-pointer z-40 md:hidden absolute right-4" onClick={() => setMenuOpen(prev => !prev)}>
             &#9776;
           </div>
           <div className="hidden md:flex items-center space-x-8">
