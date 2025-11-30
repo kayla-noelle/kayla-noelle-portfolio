@@ -10,10 +10,10 @@ export default function Hero() {
     I'm a front-end developer who loves crafting beautiful and functional web experiences.
    </p>
    <div className="flex justify-center space-x-4">
-    <a href="#projects" className="bg-sky-400 text-white px-6 py-3 rounded text-lg font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(32,191,85,0.4)]">
-      View Projects
+    <a href="https://www.linkedin.com/in/kayla-noelle-chavez/" target="_blank" rel="noopener noreferrer" className="bg-sky-400 text-white px-6 py-3 rounded text-lg font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_18px_rgba(125,211,252,0.55)]">
+      My LinkedIn
     </a>
-     <a href="#contact" className="border border-sky-400/50 text-sky-400 px-6 py-3 rounded font-medium transition-all duration-200 overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(32,191,85,0.4)] hover:bg-sky-400/10">
+     <a href="#contact" className="border border-sky-400/50 text-sky-400 px-6 py-3 rounded font-medium transition-all duration-200 overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_18px_rgba(125,211,252,0.55)] hover:bg-sky-400/10">
       Contact Me
     </a>
    </div>
