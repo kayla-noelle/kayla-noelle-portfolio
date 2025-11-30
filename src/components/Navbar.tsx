@@ -16,10 +16,10 @@ export default function Navbar({ menuOpen, setMenuOpen }: { menuOpen: boolean; s
             &#9776;
           </div>
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#home" className="font-sans text-gray-900 dark:text-white hover:text-gray-200 transition-colors dark:hover:text-white transition-colors">Home</a>
-            <a href="#about" className="font-sans text-gray-900 dark:text-white hover:text-gray-200 transition-colors dark:hover:text-white transition-colors">About</a>
-            <a href="#projects" className="font-sans text-gray-900 dark:text-white hover:text-gray-200 transition-colors dark:hover:text-white transition-colors">Projects</a>
-            <a href="#contact" className="font-sans text-gray-900 dark:text-white hover:text-gray-200 transition-colors dark:hover:text-white transition-colors">Contact</a>
+            <a href="#home" className="font-sans text-gray-900 dark:text-white hover:text-gray-900 transition-colors dark:hover:text-white transition-colors">Home</a>
+            <a href="#about" className="font-sans text-gray-900 dark:text-white hover:text-gray-900 transition-colors dark:hover:text-white transition-colors">About</a>
+            <a href="#projects" className="font-sans text-gray-900 dark:text-white hover:text-gray-900 transition-colors dark:hover:text-white transition-colors">Projects</a>
+            <a href="#contact" className="font-sans text-gray-900 dark:text-white hover:text-gray-900 transition-colors dark:hover:text-white transition-colors">Contact</a>
           </div>
         </div>
       </div>
