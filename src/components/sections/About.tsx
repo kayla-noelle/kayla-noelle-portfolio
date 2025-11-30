@@ -17,21 +17,23 @@ export default function About() {
                 <h3 className="text-gray-900 dark:text-gray-300 text-xl font-bold mb-4"> Frontend</h3>
                 <div className="flex flex-wrap gap-2">
                   {frontendSkills.map((skill,key) => (
-                  <span key={key} className="bg-sky-500/10 text-yellow-400 py-1 px-3 rounded-full text-sm hover:bg-[#20BF55]/20 hover:shadow-[0_2px_8px_rgba(32,191,85,0.2)] transition">{skill}</span>))}
+                  <span key={key} className="bg-sky-500/10 text-sky-500 py-1 px-3 rounded-full text-sm
+             hover:bg-sky-500/20 hover:shadow-[0_2px_8px_rgba(56,189,248,0.2)]
+             transition">{skill}</span>))}
                 </div>
                 </div>
                 <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
                 <h3 className="text-gray-900 dark:text-gray-300 text-xl font-bold mb-4"> Backend</h3>
                 <div className="flex flex-wrap gap-2">
                   {backendSkills.map((skill,key) => (
-                  <span key={key} className="bg-sky-500/10 text-yellow-400 py-1 px-3 rounded-full text-sm hover:bg-[#20BF55]/20 hover:shadow-[0_2px_8px_rgba(32,191,85,0.2)] transition">{skill}</span>))}
+                  <span key={key} className="bg-sky-500/10 text-sky-500 py-1 px-3 rounded-full text-sm hover:bg-sky-500/20 hover:shadow-[0_2px_8px_rgba(56,189,248,0.2)] transition">{skill}</span>))}
                 </div>
                 </div>
                 <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
                 <h3 className="text-gray-900 dark:text-gray-300 text-xl font-bold mb-4"> Other</h3>
                 <div className="flex flex-wrap gap-2">
                    {otherSkills.map((skill,key) => (
-                  <span key={key} className="bg-sky-500/10 text-yellow-400 py-1 px-3 rounded-full text-sm hover:bg-[#20BF55]/20 hover:shadow-[0_2px_8px_rgba(32,191,85,0.2)] transition">{skill}</span>))}
+                  <span key={key} className="bg-sky-500/10 text-sky-500 py-1 px-3 rounded-full text-sm hover:bg-sky-500/20 hover:shadow-[0_2px_8px_rgba(56,189,248,0.2)] transition">{skill}</span>))}
                 </div>
                 </div>
               </div>
