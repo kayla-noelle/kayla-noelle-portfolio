@@ -5,7 +5,7 @@ export default function Hero() {
    <section id="home" className="min-h-screen flex items-center justify-center relative bg-white dark:bg-gray-900">
     <RevealOnScroll>
    <div className="text-center z-10 px-4">
-   <h1 className="font-sans text-5xl md:text-7xl font-bold mb-6  bg-clip-text text-transparent bg-[length:200%_200%] animate-gradientWave">Hi, I'm Kayla Chavez</h1>
+   <h1 className="font-sans text-5xl md:text-7xl font-bold mb-6  bg-clip-text text-transparent">Hi, I'm Kayla Chavez</h1>
    <p className="font-sans text-gray-900 dark:text-gray-300 text-left text-lg mb-8 max-w-lg mx-auto">
     I'm a front-end developer who loves crafting beautiful and functional web experiences.
    </p>
