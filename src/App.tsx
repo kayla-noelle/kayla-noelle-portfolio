@@ -18,7 +18,7 @@ import { Toaster } from "react-hot-toast";
       <div className={`min-h-screen transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"} bg-black text-gray-100`}>
         <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-        <Home />
+        <Home isLoaded={isLoaded}  />
         <About />
         <Projects />
         <Contact />
