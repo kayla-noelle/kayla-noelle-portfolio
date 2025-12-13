@@ -7,26 +7,17 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        oswald: ['Oswald', "sans-serif"],
+        unica: ['"Unica One"', "sans-serif"],
+        sans: ['Inter', "sans-serif"],
       },
       keyframes: {
-        "tracking-in-expand": {
-          "0%": {
-            letterSpacing: "-0.5em",
-            opacity: "0",
-          },
-          "40%": {
-            opacity: "0.6",
-          },
-          "100%": {
-            letterSpacing: "normal",
-            opacity: "1",
-          },
+         'slide-line': {
+          '0%': { width: '0%' },
+          '100%': { width: '100%' },
         },
       },
       animation: {
-        "tracking-in-expand":
-          "tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both",
+        "slide-line": "slide-line 0.7s ease forwards",
       },
     },
   },

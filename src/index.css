@@ -5,33 +5,27 @@
 
 html, body {
   margin:0;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Inter', sans-serif;
   padding:0;
-  background: #fafaf9; /*light mode background*/
-  color: #121212; /*light mode text color*/
+  background: #faf7f2; 
+  color: #121212; 
 }
-@media (prefers-color-scheme: dark) {
-  html, body {
-    background: #1C1917; /*dark mode background*/
-    color: #fafaf9; /*dark mode text color*/
-  }
 
+h1, h2, h3, h4, h5, h6 , .font-unica {
+  font-family: 'Unica One', cursive;
 }
-@font-face {
-  font-family: 'Oswald';
-  src: url('/fonts/Oswald-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+
+ @font-face {
+  font-family: 'Unica One';
+  src: url('/fonts/UnicaOne-Regular.ttf') format('truetype');
+
 }
 
 @font-face {
-  font-family: 'Oswald';
-  src: url('/fonts/Oswald-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
+  font-family: 'Inter';
+  src: url('/fonts/Inter_18pt-Regular.ttf') format('truetype');
+
+} 
 
 
 @layer utilities {
@@ -133,12 +127,9 @@ html, body {
   right: -5px;
   bottom: -5px;
   z-index: -1; /* behind the box */
-  border-radius: 0.5rem;
-  background: white;
-  filter: blur(15px);
 }
 
-@keyframes tracking-in-expand {
+/* @keyframes tracking-in-expand {
   0% {
     letter-spacing: -0.5em;
     opacity: 0;
@@ -154,4 +145,72 @@ html, body {
 
 .animate-tracking-in-expand {
   animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+} */
+
+/*Title moving up*/
+@keyframes slide-up-fade {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
+@layer utilities {
+  .animate-slide-up-fade {
+    animation: slide-up-fade 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+  }
+}
+
+
+
+/* BUTTONS ANIMATION REVEAL AFFECT */
+/* Border Reveal Button - Fully Dark Mode Aware */
+.btn-border-reveal {
+  position: relative;
+  overflow: hidden;
+  padding: 0.75rem 1.5rem; /* equivalent to px-6 py-3 */
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 500;    /* medium */
+  border-radius: 0.375rem; /* rounded */
+  background-color: transparent;
+  color: #1c1c1c;      /* light mode text */
+  border: 1px solid #1c1c1c; /* light mode border */
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-border-reveal::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #1c1c1c; /* light mode background fill */
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
+.btn-border-reveal:hover::after {
+  width: 100%;
+}
+
+.btn-border-reveal:hover {
+  color: #fafaf9; /* hover text for contrast */
+}
+
+
+/*Marquee Animation */
+ @keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+
+  .animate-marquee {
+    display: inline-block;
+    animation: marquee 15s linear infinite;
+  }
