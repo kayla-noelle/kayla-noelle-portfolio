@@ -6,7 +6,7 @@ export default function Projects() {
       <RevealOnScroll>
         <h2 className="text-[#1c1c1c] text-4xl font-bold mb-8">Projects</h2>
       <p className="text-[#1c1c1c] text-lg max-w-3xl text-center">
-        Currently Under Construction 🚧
+        Coming soon...
       </p>
       </RevealOnScroll>
     </section>

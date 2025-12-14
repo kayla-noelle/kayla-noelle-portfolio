@@ -205,12 +205,36 @@ h1, h2, h3, h4, h5, h6 , .font-unica {
 
 
 /*Marquee Animation */
- @keyframes marquee {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
   }
+  100% {
+    transform: translateX(-50%);
+  }
+}
 
-  .animate-marquee {
-    display: inline-block;
-    animation: marquee 15s linear infinite;
-  }
+.animate-marquee {
+  display: flex;
+  animation: marquee 20s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused; /* hover pause */
+}
+
+.nav-item::after {
+  content: '';
+  position: absolute;
+  top:50%;
+  left: 0%;
+  transform: translateY(-50%);
+  width: 0;              /* start hidden */
+  height: 2px;           /* thickness of the line */
+  background-color: #1e40af; /* blue */
+  transition: width 0.3s ease;
+}
+
+.nav-item:hover::after {
+  width: 100%; /* short line under menu text */
+}

@@ -1,23 +1,35 @@
 import { RevealOnScroll } from "../RevealOnScroll";
-import { TerminalSkills } from "../TerminalSkills";
+// import { TerminalSkills } from "../TerminalSkills";
 export default function About() {
+  const skills = [" JavaScript ", "HTML5", "CSS", "TypeScript", "Design"];
     return (
-      <section id="about" className="py-8 bg-[#faf7f2] min-h-screen flex items-center justify-center">
+      <section id="about" className="py-8 bg-[#faf7f2] min-h-screen ">
         <RevealOnScroll>
-        <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-5xl md:text-7xl font-bold mb-8 text-[#1c1c1c] text-center animate-slide-left-fade">About Me</h2>
-          <span className="block h-1 w-0 bg-[#1c1c1c] mt-2 animate-slide-line mx-auto"></span>
-          <div className="glass rounded-xl p-8 border-white/10 border hover:-translate-y-1 transition-all">
-            <p className=" text-left text-[#1c1c1c] mb-6">
+       <div className="max-w-3xl mx-auto px-4">
+            <h2 className="text-5xl md:text-7xl font-bold mb-8 text-[#1c1c1c] text-center animate-slide-left-fade">
+              About Me
+            </h2>
+            <span className="block h-1 w-0 bg-[#1c1c1c] mt-2 animate-slide-line mx-auto"></span>
+            <div className="glass mb-8 rounded-xl p-8 border-[#1c1c1c]/50 border hover:-translate-y-1 transition-all">
+              <p className="text-left text-[#1c1c1c] mb-6">
               I am a meticulous, precise Front End Developer with a strong background in graphic design. After earning my B.A. in Graphic Design from San Diego State University, I kicked off my career working with cross-functional teams on branding, publications, and digital experiences. In 2021, I leveled up my technical skills by completing a Full Stack Engineering bootcamp with Thinkful, which cemented my passion for software development. Today, I combine design with my engineering discipline to build clean, intuitive interfaces and user-focused products that look great and work even better. When I'm off the clock, I'm still usually feeding that same love of problem-solving whether that’s solving Wordle, Sudoku, or crossword puzzles or getting lost into a good mystery novel. When I finally need a break from all the puzzles, you'll find me at the gym resetting my brain!
             </p>
             </div>
-            <div className ="mt-6">
-              <h3 className="text-[#1c1c1c] text-xl font-bold mb-4">Skills</h3>
-              <TerminalSkills /></div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+          </div>
+                 <div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-[#1e40af] py-3 overflow-hidden">
+                    <div className="flex w-max animate-marquee will-change-transform gap-16 text-xl md:text-2xl text-[#faf7f2]">
+                      {[...skills, ...skills].map((skill, index) => (
+                        <span key={index} className="whitespace-nowrap font-unica">
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+              {/* Education and Work Experience */}
+              <div className="max-w-5xl mx-auto px-4 mt-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
               <div className="p-6 rounded-xl border-[#1c1c1c]/50 border hover hover:-translate-y-1 transition-all">
-              <h3 className=" text-left text-[#1c1c1c] text-xl font-bold mb-4"> 🏫 Education </h3>
+              <h3 className=" text-left text-[#1c1c1c] text-xl font-bold mb-4">Education </h3>
               <ul className="list-disc list-inside text-left text-[#1c1c1c] space-y-2">
                 <li>
                   <strong>B.A. in Graphic Design</strong> - San Diego State University, (2014-2019)
@@ -28,7 +40,7 @@ export default function About() {
               </ul>
               </div>
               <div className="p-6 rounded-xl border-[#1c1c1c]/50 border hover hover:-translate-y-1 transition-all">
-              <h3 className="text-left text-[#1c1c1c] text-xl font-bold mb-4"> 💼 Work Experience </h3>
+              <h3 className="text-left text-[#1c1c1c] text-xl font-bold mb-4">Work Experience </h3>
               <div className="space-y-4 text-white-400">
                 <div>
                   <h4 className="text-left font-semibold text-[#1c1c1c]">Front End Developer at Tubby Todd (DEC 2021-NOV 2025)</h4>
@@ -59,10 +71,11 @@ export default function About() {
               </div>
               </div>
             </div>
-          </div>
+              </div>
+            
           </RevealOnScroll>
       </section>
 
     );
   }
-  
+    
