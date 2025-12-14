@@ -15,8 +15,8 @@ export default function Home({ isLoaded }: HomeProps) {
   }, [isLoaded]);
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative bg-[#faf7f2]">
-      <div className="text-left z-10 px-4">
+    <section id="home" className="min-h-[80vh] md:min-h-screen flex items-center justify-center relative bg-[#faf7f2] py-12 md:py-0">
+      <div className="text-left z-10 px-4 py-8 md:py-0">
         <h1
           className={`font-unica text-5xl md:text-9xl text-left mb-6 text-[#1c1c1c] transform ${
             animate ? "animate-slide-up-fade" : "opacity-0"
