@@ -1,3 +1,3 @@
 Welcome to my new portfolio! This showcase all my skills I've learned over the years as a Front-End Developer as well as my time as a Shopify Developer for Tubby Todd. Soon my website will showcase my resume and examples of my skills in React, Javascript, HTML5, CSS and many more! Feel free to take a look around, provide feedback, or get in touch to collab on a creative and technical projects! :) 
 
-<a href="https://www.kayla-noelle.com">My Website</a>
+<a href="https://kayla-noelle.com/">My Website</a>
