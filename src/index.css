@@ -223,6 +223,7 @@ h1, h2, h3, h4, h5, h6 , .font-unica {
   animation-play-state: paused; /* hover pause */
 }
 
+/* Navigation line effect*/
 .nav-item::after {
   content: '';
   position: absolute;
@@ -236,5 +237,23 @@ h1, h2, h3, h4, h5, h6 , .font-unica {
 }
 
 .nav-item:hover::after {
+  width: 100%; /* short line under menu text */
+}
+
+/* Project Link line effect*/
+
+.project-item::after {
+  content: '';
+  position: absolute;
+  top:50%;
+  left: 0%;
+  transform: translateY(-50%);
+  width: 0;              /* start hidden */
+  height: 2px;           /* thickness of the line */
+  background-color: #1e40af; /* blue */
+  transition: width 0.3s ease;
+}
+
+.project-item:hover::after {
   width: 100%; /* short line under menu text */
 }

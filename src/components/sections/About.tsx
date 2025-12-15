@@ -1,7 +1,7 @@
 import { RevealOnScroll } from "../RevealOnScroll";
 // import { TerminalSkills } from "../TerminalSkills";
 export default function About() {
-  const skills = [" JavaScript ", "HTML5", "CSS", "TypeScript", "Design"];
+  const skills = [" JavaScript ", "HTML5", "CSS", "TypeScript", "React", "Shopify", "Design"];
     return (
       <section id="about" className="py-8 bg-[#faf7f2] min-h-screen ">
         <RevealOnScroll>
@@ -10,7 +10,7 @@ export default function About() {
               About Me
             </h2>
             <span className="block h-1 w-0 bg-[#1c1c1c] mt-2 animate-slide-line mx-auto"></span>
-            <div className="glass mb-8 rounded-xl p-8 border-[#1c1c1c]/50 border hover:-translate-y-1 transition-all">
+            <div className="glass mb-8 rounded-xl p-8 border-[#1c1c1c]/50 border hover:-translate-y-1 transition-all bg-[#E7DED3]">
               <p className="text-left text-[#1c1c1c] mb-6">
               I am a meticulous, precise Front End Developer with a strong background in graphic design. After earning my B.A. in Graphic Design from San Diego State University, I kicked off my career working with cross-functional teams on branding, publications, and digital experiences. In 2021, I leveled up my technical skills by completing a Full Stack Engineering bootcamp with Thinkful, which cemented my passion for software development. Today, I combine design with my engineering discipline to build clean, intuitive interfaces and user-focused products that look great and work even better. When I'm off the clock, I'm still usually feeding that same love of problem-solving whether that’s solving Wordle, Sudoku, or crossword puzzles or getting lost into a good mystery novel. When I finally need a break from all the puzzles, you'll find me at the gym resetting my brain!
             </p>
@@ -28,7 +28,7 @@ export default function About() {
               {/* Education and Work Experience */}
               <div className="max-w-5xl mx-auto px-4 mt-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-              <div className="p-6 rounded-xl border-[#1c1c1c]/50 border hover hover:-translate-y-1 transition-all">
+              <div className="p-6 rounded-xl border-[#1c1c1c]/50 border hover:-translate-y-1 transition-all bg-[#E7DED3]">
               <h3 className=" text-left text-[#1c1c1c] text-xl font-bold mb-4">Education </h3>
               <ul className="list-disc list-inside text-left text-[#1c1c1c] space-y-2">
                 <li>
@@ -39,7 +39,7 @@ export default function About() {
                 </li>
               </ul>
               </div>
-              <div className="p-6 rounded-xl border-[#1c1c1c]/50 border hover hover:-translate-y-1 transition-all">
+              <div className="p-6 rounded-xl border-[#1c1c1c]/50 border hover:-translate-y-1 transition-all bg-[#E7DED3]">
               <h3 className="text-left text-[#1c1c1c] text-xl font-bold mb-4">Work Experience </h3>
               <div className="space-y-4 text-white-400">
                 <div>
