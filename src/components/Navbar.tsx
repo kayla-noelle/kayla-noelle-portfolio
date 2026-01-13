@@ -8,7 +8,7 @@ export default function Navbar({ menuOpen, setMenuOpen }: { menuOpen: boolean; s
   }, [menuOpen]);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-40 bg-[#faf7f2] backdrop-[#1c1c1c]-lg border-b border-[#1c1c1c]/50">
+    <nav className="fixed top-0 left-0 right-0 z-40 bg-stone-50 backdrop-[#1c1c1c]-lg border-b border-[#1c1c1c]/50">
       <div className="max-w-5xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <a href="#home" className="font-unica text-lg text-[#1c1c1c]">Kayla Noelle</a>

@@ -15,8 +15,16 @@ export default function Home({ isLoaded }: HomeProps) {
   }, [isLoaded]);
 
   return (
-    <section id="home" className="min-h-[80vh] md:min-h-screen flex items-center justify-center relative bg-[#faf7f2] py-12 md:py-0">
+    <section id="home" className="min-h-[80vh] md:min-h-screen flex items-center justify-center relative bg-stone-50 py-12 md:py-0">
       <div className="text-left z-10 px-4 py-8 md:py-0">
+        <div className="bg-gradient">
+          <div className="absolute inset-0 top-[50px] flex justify-center">
+             <div className="bg-shape1 bg-sky-400 opacity-50 bg-blur"></div>
+         <div className="bg-shape2 bg-violet-400 opacity-50 bg-blur"></div>
+          <div className="bg-shape3 bg-fuchsia-400 opacity-50 bg-blur"></div>
+          </div>
+        </div>
+       
         <h1
           className={`font-unica text-5xl md:text-9xl text-left mb-6 text-[#1c1c1c] transform ${
             animate ? "animate-slide-up-fade" : "opacity-0"
@@ -29,7 +37,7 @@ export default function Home({ isLoaded }: HomeProps) {
             animate ? "animate-slide-up-fade delay-200" : "opacity-0"
           }`}
         >
-          I'm a front-end developer who loves crafting beautiful and functional web experiences.
+          I'm a front-end developer and designer who is passionate about crafting beautiful and functional websites.
         </p>
         {/* <div className="flex justify-start md:justify-center space-x-4">
           <a
