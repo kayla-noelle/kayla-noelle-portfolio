@@ -1,3 +1,5 @@
+import { serialize } from "v8";
+
 /** @type {import('tailwindcss').Config} */
 const defaultTheme = require('tailwindcss/defaultTheme');
 
@@ -9,6 +11,8 @@ module.exports = {
       fontFamily: {
         unica: ['"Unica One"', "sans-serif"],
         sans: ['Inter', "sans-serif"],
+        abril:['Abril', "sans-serif"],
+        libre:['Libre', "serif"]
       },
       keyframes: {
          'slide-line': {

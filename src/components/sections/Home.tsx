@@ -26,18 +26,18 @@ export default function Home({ isLoaded }: HomeProps) {
         </div>
        
         <h1
-          className={`font-unica text-5xl md:text-9xl text-left mb-6 text-[#1c1c1c] transform ${
+          className={`font-abril text-5xl md:text-9xl text-left mb-6 text-[#1c1c1c] transform ${
             animate ? "animate-slide-up-fade" : "opacity-0"
           }`}
         >
           Hi, I'm <br/>Kayla Noelle <br/> 
         </h1>
         <p
-          className={`font-sans font-normal text-[#1c1c1c] text-left md:px-2 mb-6 text-lg max-w-lg transform ${
+          className={`font-libre font-normal text-[#1c1c1c] text-left md:px-2 mb-6 text-lg max-w-lg transform ${
             animate ? "animate-slide-up-fade delay-200" : "opacity-0"
           }`}
         >
-          I'm a front-end developer and designer who is passionate about crafting beautiful and functional websites.
+          I'm a front-end developer and designer who is passionate about crafting beautiful and accessible websites.
         </p>
         {/* <div className="flex justify-start md:justify-center space-x-4">
           <a

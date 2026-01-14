@@ -64,7 +64,7 @@ export default function Contact() {
             </div>
             <button 
             type="submit" 
-            className="btn-border-reveal w-full bg-stone-900 text-[#E7DED3] px-6 py-3 rounded text-lg font-medium transition relative overflow-hidden">
+            className="btn-border-reveal w-full bg-stone-900 text-[#E7DED3] px-6 py-3 rounded text-lg font-libre transition relative overflow-hidden">
               Send Message
             </button>
           </form>
