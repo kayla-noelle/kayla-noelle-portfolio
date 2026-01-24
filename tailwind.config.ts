@@ -9,10 +9,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        unica: ['"Unica One"', "sans-serif"],
-        sans: ['Inter', "sans-serif"],
         abril:['Abril', "sans-serif"],
-        libre:['Libre', "serif"]
+        mono:['IBMPlex-Mono', "sans-serif"]
       },
       keyframes: {
          'slide-line': {

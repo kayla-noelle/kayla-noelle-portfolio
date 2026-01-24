@@ -8,6 +8,7 @@ import { useState } from "react";
 import About from "./components/sections/About.tsx";
 import Projects from "./components/sections/Projects.tsx";
 import Contact from "./components/sections/Contact.tsx";
+import Footer from "./components/sections/Footer.tsx"
 import { Toaster } from "react-hot-toast";
  function App() {
   const [isLoaded, setIsLoaded] =  useState (false);
@@ -22,6 +23,7 @@ import { Toaster } from "react-hot-toast";
         <About />
         <Projects />
         <Contact />
+        <Footer />
         <Toaster position="top-right" reverseOrder={false} />
       </div>
   

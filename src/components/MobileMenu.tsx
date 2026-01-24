@@ -3,7 +3,7 @@ export default function MobileMenu({ menuOpen, setMenuOpen }: { menuOpen: boolea
 
   
   return (
-    <div className={`fixed top-0 left-0 w-full bg-fuchsia-200 z-40 flex flex-col items-center justify-center 
+    <div className={`fixed font-mono top-0 left-0 w-full bg-fuchsia-200 z-40 flex flex-col items-center justify-center 
     transition-all duration-300 ease-in-out
     ${menuOpen ? "h-screen opacity-100 pointer-events-auto" : "h-0 opacity-0 pointer-events-none"
 
