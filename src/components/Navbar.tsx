@@ -19,6 +19,7 @@ export default function Navbar({ menuOpen, setMenuOpen }: { menuOpen: boolean; s
             <a href="#home" className="nav-item relative font-unica text-[#1c1c1c] hover:text-[#1c1c1c] transition-colors dark:hover:text-[#1c1c1c] transition-colors">Home</a>
             <a href="#about" className="nav-item relative font-unica text-[#1c1c1c] hover:text-[#1c1c1c] transition-colors dark:hover:text-[#1c1c1c] transition-colors">About</a>
             <a href="https://www.linkedin.com/in/kayla-noelle-chavez/" className="nav-item relative font-unica text-[#1c1c1c] hover:text-[#1c1c1c] transition-colors dark:hover:text-[#1c1c1c] transition-colors" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="#projects" className="nav-item relative font-unica text-[#1c1c1c] hover:text-[#1c1c1c] transition-colors dark:hover:text-[#1c1c1c] transition-colors">Projects</a>
             <a href="#contact" className="nav-item relative font-unica text-[#1c1c1c] hover:text-[#1c1c1c] transition-colors dark:hover:text-[#1c1c1c] transition-colors">Contact</a>
           </div>
         </div>

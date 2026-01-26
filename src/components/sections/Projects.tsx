@@ -6,7 +6,6 @@ export default function Projects() {
       <RevealOnScroll>
         <h2 className="text-[#1c1c1c] text-4xl font-bold mb-8">Projects</h2>
         <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-[#1c1c1c] text-2xl font-bold mb-4">Featured Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="p-6 border border-[#1c1c1c] rounded-lg border hover:-translate-y-1 transition-all bg-fuchsia-200">
               <h3 className="text-[#1c1c1c] text-xl font-bold mb-2">Portfolio Website</h3>

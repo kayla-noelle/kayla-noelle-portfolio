@@ -22,6 +22,8 @@ aria-label="Close Menu"
                 ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}>About</a>
             <a href="https://www.linkedin.com/in/kayla-noelle-chavez/" onClick={() => setMenuOpen(false)} className={`text-2xl font-semibold text-[#1c1c1c] my-4 transform transition-transform duration-300
                 ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}>LinkedIn</a>
+            <a href="#projects" onClick={() => setMenuOpen(false)} className={`text-2xl font-semibold text-[#1c1c1c] my-4 transform transition-transform duration-300
+                ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}>Projects</a>    
             <a href="#contact" onClick={() => setMenuOpen(false)} className={`text-2xl font-semibold text-[#1c1c1c] my-4 transform transition-transform duration-300
                 ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}>Contact</a>
     </div>
