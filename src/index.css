@@ -13,21 +13,10 @@ html, body {
   box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6 , .font-unica {
+h1, h2, h3, h4, .font-unica {
   font-family: 'Abril', cursive;
 }
 
- @font-face {
-  font-family: 'Unica One';
-  src: url('/fonts/UnicaOne-Regular.ttf') format('truetype');
-
-}
-
-@font-face {
-  font-family: 'Inter';
-  src: url('/fonts/Inter_18pt-Regular.ttf') format('truetype');
-
-} 
 
 @font-face {
   font-family: 'Abril';
@@ -267,4 +256,71 @@ justify-content: center;
 
 .bg-blur{
   filter:blur(90px);
+}
+
+/*Timeline*/
+
+.timeline {
+  position: relative;
+  max-width:100%;
+  margin: 0 auto;
+  padding: 2em 0;
+  list-style: none;
+}
+
+.timeline:before {
+  position: absolute;
+  left: 100px;
+  top: 0;
+  content: ' ';
+  width: 2px;
+  height: 100%;
+  margin-left: -2px;
+  background: linear-gradient(to bottom, rgba(80,80,80,0) 0%, rgb(80,80,80) 8%, rgb(80,80,80) 92%, rgba(80,80,80,0) 100%);
+  z-index: 1;
+}
+.timeline li {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  padding-left: 80px;
+  margin-bottom: 2em;
+}
+
+
+.timeline .job-title {
+  padding: 1em;
+  max-width: 500px;
+  z-index: 2;
+}
+
+/* Circles for timeline */
+.timeline li::after {
+  content: '';
+  position: absolute;
+  top: 20px; /* adjust depending on box height */
+  left: 100px;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #1c1c1c;
+  z-index: 2;
+}
+
+
+/* ================ Timeline Media Queries ================ */
+@media screen and (max-width: 660px) {
+  .timeline li {
+    padding-left: 60px; /* smaller left spacing */
+  }
+
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline li::after {
+    left: 20px;
+  }
+
 }
