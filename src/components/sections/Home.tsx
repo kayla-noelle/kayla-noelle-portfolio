@@ -33,7 +33,7 @@ export default function Home({ isLoaded }: HomeProps) {
           Hi, I'm <br/>Kayla Noelle <br/> 
         </h1>
         <p
-          className={`font-mono font-normal text-[#1c1c1c] text-left md:px-2 mb-6 text-lg max-w-lg transform ${
+          className={`font-mono font-normal md:text-3xl text-[#1c1c1c] text-left mb-6 max-w-lg transform ${
             animate ? "animate-slide-up-fade delay-200" : "opacity-0"
           }`}
         >
