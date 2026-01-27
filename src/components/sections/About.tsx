@@ -1,11 +1,10 @@
-import { RevealOnScroll } from "../RevealOnScroll";
+//import { RevealOnScroll } from "../RevealOnScroll";
 import PixelProfile from '../../assets/pixelart-profile.png';
 // import { TerminalSkills } from "../TerminalSkills";
 export default function About() {
   const skills = [" JavaScript ", "HTML5", "CSS", "TypeScript", "React", "Shopify", "Graphic Design", "Figma"];
     return (
       <section id="about" className="py-8 bg-stone-50 min-h-screen ">
-        <RevealOnScroll>
       <div className="max-w-6xl mx-auto px-4">
           <div className="glass rounded-2xl bg-fuchsia-200 mb-8 p-8 md:p-12 border border-[#1c1c1c]/50 bg-fuschia-200 transition-all hover:-translate-y-1">
     
@@ -111,7 +110,6 @@ export default function About() {
                   </ul>
                 </div>
               </div>
-          </RevealOnScroll>
       </section>
 
     );
