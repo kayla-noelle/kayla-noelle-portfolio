@@ -1,5 +1,5 @@
 //import { RevealOnScroll } from "../RevealOnScroll";
-import PixelProfile from '../../assets/pixelart-profile.png';
+import PixelProfile from '../../assets/profile-picture.png'
 // import { TerminalSkills } from "../TerminalSkills";
 export default function About() {
   const skills = [" JavaScript ", "HTML5", "CSS", "TypeScript", "React", "Shopify", "Graphic Design", "Figma"];
@@ -15,7 +15,7 @@ export default function About() {
         <img
           src={PixelProfile}
           alt="Pixel Art Profile Picture of Kayla Noelle"
-          className="w-56 h-56 md:w-72 md:h-72 object-cover rounded-xl shadow-lg"
+          className="w-56 h-56 md:w-100 md:h-150 object-cover rounded-xl shadow-lg"
         />
       </div>
 
