@@ -14,7 +14,7 @@ export default function About() {
       <div className="order-1 md:order-2 flex justify-center md:justify-end">
         <img
           src={PixelProfile}
-          alt="Pixel Art Profile Picture of Kayla Noelle"
+          alt="Profile Picture of Kayla Noelle"
           className="w-56 h-56 md:w-100 md:h-150 object-cover rounded-xl shadow-lg"
         />
       </div>
