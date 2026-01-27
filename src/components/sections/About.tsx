@@ -1,21 +1,45 @@
 import { RevealOnScroll } from "../RevealOnScroll";
+import PixelProfile from '../../assets/pixelart-profile.png';
 // import { TerminalSkills } from "../TerminalSkills";
 export default function About() {
   const skills = [" JavaScript ", "HTML5", "CSS", "TypeScript", "React", "Shopify", "Graphic Design", "Figma"];
     return (
       <section id="about" className="py-8 bg-stone-50 min-h-screen ">
         <RevealOnScroll>
-       <div className="max-w-3xl mx-auto px-4">
-            <h2 className="text-4xl font-bold mb-8 text-[#1c1c1c] text-center animate-slide-left-fade">
-              About Me
-            </h2>
-            <span className="block h-1 w-0 bg-[#1c1c1c] mt-2 animate-slide-line mx-auto"></span>
-            <div className="glass mb-8 rounded-xl p-8 border-[#1c1c1c]/50 border hover:-translate-y-1 transition-all bg-fuchsia-200">
-              <p className="font-mono text-left text-[#1c1c1c] mb-6">
-              I am a meticulous, precise Front End Developer with a strong background in graphic design. After earning my B.A. in Graphic Design from San Diego State University, I kicked off my career working with cross-functional teams on branding, publications, and digital experiences. In 2021, I leveled up my technical skills by completing a Full Stack Engineering bootcamp with Thinkful, which cemented my passion for software development. Today, I combine design with my engineering discipline to build clean, intuitive interfaces and user-focused products that look great and work even better. When I'm off the clock, if I'm not too busy fueling my coffee addiction, I'm usually enjoying my creative hobbies such as painting or resetting my brain at the gym!
-            </p>
-            </div>
-          </div>
+      <div className="max-w-6xl mx-auto px-4">
+          <div className="glass rounded-2xl bg-fuchsia-200 mb-8 p-8 md:p-12 border border-[#1c1c1c]/50 bg-fuschia-200 transition-all hover:-translate-y-1">
+    
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      
+      {/* Image */}
+      <div className="order-1 md:order-2 flex justify-center md:justify-end">
+        <img
+          src={PixelProfile}
+          alt="Pixel Art Profile Picture of Kayla Noelle"
+          className="w-56 h-56 md:w-72 md:h-72 object-cover rounded-xl shadow-lg"
+        />
+      </div>
+
+      {/* Text */}
+      <div className="order-2 md:order-1 text-left">
+        <h2 className="text-5xl font-bold text-[#1c1c1c] mb-3 animate-slide-left-fade">
+          So, who am I?
+        </h2>
+        <p className="font-mono text-[#1c1c1c] leading-relaxed">
+          I’m a developer and designer who longs to inspire brands and companies to captivate their users with stunning digital experiences!
+          <br /><br />
+          After earning my B.A. in Graphic Design from San Diego State (Go Aztecs!)I kicked off my design career working with cross-functional teams on branding, publications, and digital experiences. But I knew I wanted to make a more meaningful impact in my work. So that’s why in 2021 I decided to add in a special skill in my arsenal, Full Stack Engineering with Thinkful! After much sweat, tears, and support from my loved ones…I completed my course!
+          <br /><br />
+          Today I combine design and my engineering discipline to create stunning, intuitive interfaces and user-focused products that not only look great but work even better.
+          <br></br>
+          When I’m off the clock, you’ll usually find me fueling my caffeine addiction, enjoying other creative hobbies like painting or pretending I’m running from zombies at the gym. 
+
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
                  <div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-[#1c1c1c] py-3 overflow-hidden">
                     <div className="flex w-max animate-marquee will-change-transform gap-16 text-xl md:text-2xl text-[#faf7f2]">
                       {[...skills, ...skills].map((skill, index) => (

@@ -39,22 +39,6 @@ export default function Home({ isLoaded }: HomeProps) {
         >
           I'm a San-Diego based front-end developer and designer
         </p>
-        {/* <div className="flex justify-start md:justify-center space-x-4">
-          <a
-            href="https://www.linkedin.com/in/kayla-noelle-chavez/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="dark btn-border-reveal font-oswald px-6 py-3 rounded text-lg font-medium"
-          >
-            My LinkedIn
-          </a>
-          <a
-            href="#contact"
-            className="btn-border-reveal border-stone-900/50 dark:border-stone-50/50 text-stone-900 dark:text-stone-50 px-6 py-3 rounded font-oswald font-medium transition-all duration-200 overflow-hidden"
-          >
-            Contact Me
-          </a>
-        </div> */}
       </div>
     </section>
   );
