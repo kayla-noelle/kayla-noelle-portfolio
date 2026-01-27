@@ -24,9 +24,9 @@ export default function Contact() {
     }).catch(() => toast.error("That didn’t load. Technology, am I right?"));
   };
     return (
-      <section id="contact" className="py-16 flex items-center justify-center relative">
+      <section id="contact" className="py-16 flex items-center justify-center relative bg-stone-50">
       <RevealOnScroll>
-        <div className="w-full px-4 md:w-[600px] mx-auto glass rounded-xl p-8 border-[#1c1c1c]/50 border bg-fuchsia-200 hover:-translate-y-1 transition-all">
+        <div className="w-full px-4 md:w-[600px] mx-auto glass rounded-xl p-8 border-[#1c1c1c]/50 border hover:-translate-y-1 transition-all bg-fuchsia-200">
           <h2 className="text-[#1c1c1c] text-4xl font-bold mb-8">Get in Touch</h2>
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="relative">
