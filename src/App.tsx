@@ -20,8 +20,8 @@ import { Toaster } from "react-hot-toast";
         <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <Home isLoaded={isLoaded}  />
-        <About />
         <Projects />
+        <About />
         <Contact />
         <Footer />
         <Toaster position="top-right" reverseOrder={false} />
