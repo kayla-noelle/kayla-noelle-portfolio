@@ -37,7 +37,7 @@ export default function Home({ isLoaded }: HomeProps) {
             animate ? "animate-slide-up-fade delay-200" : "opacity-0"
           }`}
         >
-          I'm a San-Diego based front-end developer and designer
+          I'm a San-Diego based software developer and designer
         </p>
       </div>
     </section>
