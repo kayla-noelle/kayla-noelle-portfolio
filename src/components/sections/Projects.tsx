@@ -40,7 +40,7 @@ export default function Projects() {
                 </span>
               ))}
               <div className=" font-mono flex justify-center items-center">
-                <a href ="https://github.com/kayla-noelle/book-tracking-app" className="text-[#1c1c1c] hover:underline">View Project →</a>
+                <a href ="https://kayla-noelle.github.io/book-tracking-app/" className="text-[#1c1c1c] hover:underline">View Project →</a>
               </div>
             </div>
           </div>
