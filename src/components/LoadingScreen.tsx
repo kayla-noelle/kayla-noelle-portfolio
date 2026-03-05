@@ -1,33 +1,21 @@
-import { useState,useEffect } from 'react';
-import PixelCoffee from '../assets/coffee-pixelart.png';
+import { useEffect } from 'react';
 
 export const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
-  const [text,setText] = useState("")
-  const fullText = "Brewing something nice";
-
-  useEffect(() =>{
-    let index = 0;
-    const interval =setInterval(() => {
-        setText(fullText.substring(0, index));
-        index++;
-        
-        if(index > fullText.length){
-            clearInterval(interval);
-
-            setTimeout (() =>{
-                onComplete();
-            }, 1000);
-        }
-    }, 100);
-    return () => clearInterval(interval);
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      onComplete();
+    }, 2000);
+    return () => clearTimeout(timeout);
   }, [onComplete]);
-    return (
-        <div className="fixed inset-0 z-50 bg-stone-50 text-[#1c1c1c] flex flex-col items-center justify-center">
-            <div className="mb-4 flex flex-wrap items-center justify-center gap-2 text-3xl sm:text-4xl font-mono whitespace-nowrap sm:whitespace-normal">{text}<span className="animate-blink ml-1 text-[#1c1c1c]"> | </span> <img src={PixelCoffee} alt="Pixel coffee mug" className="w-8 h-8 image-rendering-pixelated "/></div>
-            <div className="w-[200px] h-[2px] bg-gray-300 rounded relative overflow-hidden">
-                <div className="w-[40%] h-full bg-gradient-to-r from-sky-300 via-violet-400 to-fuchsia-400 shadow-[0_0_15px_#3b82f6] animate-loading-bar">
-                </div>
-                </div>
-            </div>
-    )
+
+  return (
+    <div className="fixed inset-0 z-50 bg-white text-[#1c1c1c] flex flex-col items-center justify-center gap-6">
+      <p className="font-inter text-2xl tracking-widest">Loading</p>
+      <div className="flex items-end gap-2">
+        <div className="w-2 bg-[#2C7A7B] rounded-full animate-bar-1" style={{ height: '12px' }}></div>
+        <div className="w-2 bg-[#2C7A7B] rounded-full animate-bar-2" style={{ height: '12px' }}></div>
+        <div className="w-2 bg-[#2C7A7B] rounded-full animate-bar-3" style={{ height: '12px' }}></div>
+      </div>
+    </div>
+  );
 }

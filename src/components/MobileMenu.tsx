@@ -3,7 +3,7 @@ export default function MobileMenu({ menuOpen, setMenuOpen }: { menuOpen: boolea
 
   
   return (
-    <div className={`fixed font-mono top-0 left-0 w-full bg-fuchsia-200 z-40 flex flex-col items-center justify-center 
+    <div className={`fixed font-inter top-0 left-0 w-full bg-[#2C7A7B] z-40 flex flex-col items-center justify-center 
     transition-all duration-300 ease-in-out
     ${menuOpen ? "h-screen opacity-100 pointer-events-auto" : "h-0 opacity-0 pointer-events-none"
 
@@ -24,6 +24,8 @@ aria-label="Close Menu"
                 ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}>LinkedIn</a>
             <a href="#projects" onClick={() => setMenuOpen(false)} className={`text-2xl font-semibold text-[#1c1c1c] my-4 transform transition-transform duration-300
                 ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}>Projects</a>    
+            <a href="https://github.com/kayla-noelle" target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)} className={`text-2xl font-semibold text-[#1c1c1c] my-4 transform transition-transform duration-300
+                ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}>GitHub</a>
             <a href="#contact" onClick={() => setMenuOpen(false)} className={`text-2xl font-semibold text-[#1c1c1c] my-4 transform transition-transform duration-300
                 ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}>Contact</a>
     </div>

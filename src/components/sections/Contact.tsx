@@ -24,9 +24,9 @@ export default function Contact() {
     }).catch(() => toast.error("That didn’t load. Technology, am I right?"));
   };
     return (
-      <section id="contact" className="py-16 flex items-center justify-center relative bg-stone-50">
+      <section id="contact" className="py-16 flex items-center justify-center relative bg-white">
       <RevealOnScroll>
-        <div className="w-full px-4 md:w-[600px] mx-auto glass rounded-xl p-8 border-[#1c1c1c]/50 border hover:-translate-y-1 transition-all bg-fuchsia-200">
+        <div className="w-full px-4 md:w-[600px] mx-auto rounded-xl p-8 shadow-[0_0_15px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-all">
           <h2 className="text-[#1c1c1c] text-4xl font-bold mb-8">Get in Touch</h2>
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="relative">
@@ -37,7 +37,7 @@ export default function Contact() {
               required 
               value={formData.name}
               onChange={(e) => setFormData({...formData, name: e.target.value})}
-              className=" font-mono w-full bg-stone-50 border border-[#1c1c1c]/50 rounded px-4 py-3 text-[#1c1c1c] transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5 dark:focus:border-blue-300 dark:focus:bg-blue-300/10"
+              className=" font-inter w-full bg-white border border-[#1c1c1c]/20 rounded px-4 py-3 text-[#1c1c1c] transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5 dark:focus:border-blue-300 dark:focus:bg-blue-300/10"
               placeholder="Name..." />
             </div>
             <div className="relative">
@@ -48,7 +48,7 @@ export default function Contact() {
               required 
               value={formData.email}
               onChange={(e) => setFormData({...formData, email: e.target.value})}
-              className="font-mono w-full bg-stone-50 border border-[#1c1c1c]/50 rounded px-4 py-3 text-[#1c1c1c] transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5 dark:focus:border-blue-300 dark:focus:bg-blue-300/10"
+              className="font-inter w-full bg-white border border-[#1c1c1c]/20 rounded px-4 py-3 text-[#1c1c1c] transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5 dark:focus:border-blue-300 dark:focus:bg-blue-300/10"
               placeholder="example@example.com" />
             </div>
             <div className="relative">
@@ -59,12 +59,12 @@ export default function Contact() {
               value={formData.message}
               onChange={(e) => setFormData({...formData, message: e.target.value})}
               rows={5}
-              className="font-mono w-full bg-stone-50 border border-[#1c1c1c]/50 rounded px-4 py-3 text-[#1c1c1c] transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5 dark:focus:border-blue-300 dark:focus:bg-blue-300/10"
+              className="font-inter w-full bg-white border border-[#1c1c1c]/20 rounded px-4 py-3 text-[#1c1c1c] transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5 dark:focus:border-blue-300 dark:focus:bg-blue-300/10"
               placeholder="Your message..." />
             </div>
             <button 
             type="submit" 
-            className="btn-border-reveal w-full bg-stone-900 text-[#E7DED3] px-6 py-3 rounded text-lg font-libre transition relative overflow-hidden">
+            className="btn-border-reveal w-full bg-[#2C7A7B] text-white px-6 py-3 rounded-full text-lg font-libre transition relative overflow-hidden">
               Send Message
             </button>
           </form>

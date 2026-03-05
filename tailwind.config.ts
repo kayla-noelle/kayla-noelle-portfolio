@@ -9,8 +9,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        abril:['Abril', "sans-serif"],
-        mono:['IBMPlex-Mono', "sans-serif"]
+        abril:['IBM Plex Sans', "sans-serif"],
+        mono:['IBMPlex-Mono', "sans-serif"],
+        inter:['Inter', "sans-serif"]
       },
       keyframes: {
          'slide-line': {
