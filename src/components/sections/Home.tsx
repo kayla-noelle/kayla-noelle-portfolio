@@ -53,6 +53,7 @@ export default function Home({ isLoaded }: HomeProps) {
           }`}
         >
           I'm a San Diego based{" "}
+          <br className="md:hidden" />
           <span
             style={{
               display: "inline-flex",
@@ -63,7 +64,7 @@ export default function Home({ isLoaded }: HomeProps) {
               backgroundColor: "#2C7A7B",
               color: "#ffffff",
               borderRadius: "9999px",
-              padding: "0.25rem 1.25rem",
+              padding: "0.4rem 1.6rem",
             }}
           >
             {titles[titleIndex]}

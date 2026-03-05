@@ -180,7 +180,7 @@ h1, h2, h3, h4, .font-unica {
   left: 0%;
   width: 0;              /* start hidden */
   height: 2px;           /* thickness of the line */
-  background-color: #1c1c1c;
+  background-color: #2C7A7B;
   transition: width 0.3s ease;
 }
 
