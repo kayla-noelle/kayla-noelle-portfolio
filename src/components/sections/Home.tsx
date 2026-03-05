@@ -48,12 +48,11 @@ export default function Home({ isLoaded }: HomeProps) {
           Hi, I'm <br/>Kayla Noelle <br/> 
         </h1>
         <p
-          className={`font-inter font-normal md:text-3xl text-[#1c1c1c] text-left mb-6 max-w-lg transform ${
+          className={`font-inter font-normal md:text-3xl text-[#1c1c1c] text-left mb-4 whitespace-normal md:whitespace-nowrap transform ${
             animate ? "animate-slide-up-fade delay-200" : "opacity-0"
           }`}
         >
-          I'm a San Diego based
-          <br />
+          I'm a San Diego based{" "}
           <span
             style={{
               display: "inline-flex",
@@ -65,7 +64,6 @@ export default function Home({ isLoaded }: HomeProps) {
               color: "#ffffff",
               borderRadius: "9999px",
               padding: "0.25rem 1.25rem",
-              marginTop: "0.5rem",
             }}
           >
             {titles[titleIndex]}

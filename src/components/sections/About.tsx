@@ -2,11 +2,25 @@
 import PixelProfile from '../../assets/profile-picture.png'
 // import { TerminalSkills } from "../TerminalSkills";
 export default function About() {
-  const skills = [" JavaScript ", "HTML5", "CSS", "TypeScript", "React", "Vue", "Shopify", "Graphic Design", "Figma"];
+  const skills = [" JavaScript ", "TypeScript", "React", "Vue", "Shopify", "Graphic Design", "Figma", "Full Stack Development"];
     return (
-      <section id="about" className="py-8 bg-white min-h-screen ">
-      <div className="max-w-6xl mx-auto px-4">
-          <div className="rounded-2xl mb-8 p-8 md:p-12 shadow-[0_0_15px_rgba(0,0,0,0.1)] transition-all hover:-translate-y-1">
+      <section id="about" className="py-8 bg-white min-h-screen relative">
+        {/* Background blobs */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-10 right-1/4 w-64 h-64 bg-[#2C7A7B] opacity-20 rounded-full blur-3xl"></div>
+          <div className="absolute top-40 left-1/4 w-80 h-80 bg-sky-400 opacity-15 rounded-full blur-3xl"></div>
+        </div>
+      <div className="max-w-6xl mx-auto px-4 relative">
+          <div
+            className="rounded-2xl mb-8 p-8 md:p-12 transition-all hover:-translate-y-1"
+            style={{
+              background: "rgba(255, 255, 255, 0.25)",
+              backdropFilter: "blur(20px)",
+              WebkitBackdropFilter: "blur(20px)",
+              border: "1px solid rgba(255, 255, 255, 0.45)",
+              boxShadow: "0 8px 32px rgba(44, 122, 123, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.6), inset 0 -1px 0 rgba(44, 122, 123, 0.08)",
+            }}
+          >
 
     <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
 
@@ -39,7 +53,7 @@ export default function About() {
     </div>
   </div>
 </div>
-                 <div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-[#1c1c1c] py-3 overflow-hidden">
+                 <div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-[#2C7A7B] py-3 overflow-hidden">
                     <div className="flex w-max animate-marquee will-change-transform gap-16 text-xl md:text-2xl text-[#faf7f2]">
                       {[...skills, ...skills].map((skill, index) => (
                         <span key={index} className="flex items-center gap-16">
