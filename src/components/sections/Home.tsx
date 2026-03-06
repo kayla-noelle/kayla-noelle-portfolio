@@ -34,7 +34,7 @@ export default function Home({ isLoaded }: HomeProps) {
       <div className="text-left z-10 px-4 py-8 md:py-0">
         <div className="bg-gradient">
           <div className="absolute inset-0 top-[50px] flex justify-center">
-             <div className="bg-shape1 bg-sky-400 opacity-50 bg-blur"></div>
+             <div className="bg-shape1 bg-[#f06c9b] opacity-50 bg-blur"></div>
          <div className="bg-shape2 bg-[#2C7A7B] opacity-50 bg-blur"></div>
           <div className="bg-shape3 bg-[#2C7A7B] opacity-50 bg-blur"></div>
           </div>

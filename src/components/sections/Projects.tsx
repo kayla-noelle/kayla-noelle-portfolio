@@ -28,7 +28,7 @@ export default function Projects() {
               </h3>
               <p className="font-inter text-[#1c1c1c] mb-4">A personal portfolio website to showcase my projects and skills.</p>
                {["React", "TypeScript", "Tailwind CSS", "Claude"].map((tech, key) => (
-                <span key={key} className="inline-block bg-[#2C7A7B] font-inter text-[#faf7f2] px-3 py-1 rounded-full text-sm mr-2 mb-2">
+                <span key={key} className="inline-block bg-[#2C7A7B] font-inter font-semibold text-[#D7FDFE] px-3 py-1 rounded-full text-sm mr-2 mb-2">
                   {tech}
                 </span>
               ))}
@@ -48,7 +48,7 @@ export default function Projects() {
               </h3>
               <p className="font-inter text-[#1c1c1c] mb-4">Follow along with me! I am currently creating a tool to help guide designers to making creative choices that are accessible for users!</p>
                {["React", "TypeScript", "Tailwind CSS"].map((tech, key) => (
-                <span key={key} className="inline-block bg-[#2C7A7B] font-inter text-[#faf7f2] px-3 py-1 rounded-full text-sm mr-2 mb-2">
+                <span key={key} className="inline-block bg-[#2C7A7B] font-inter font-semibold text-[#D7FDFE] px-3 py-1 rounded-full text-sm mr-2 mb-2">
                   {tech}
                 </span>
               ))}
@@ -68,7 +68,7 @@ export default function Projects() {
               </h3>
               <p className="font-inter text-[#1c1c1c] mb-4">A book tracking application to manage reading progress and reviews.</p>
                {["React", "TypeScript", "Tailwind CSS", "Next.js"].map((tech, key) => (
-                <span key={key} className="inline-block bg-[#2C7A7B] font-inter text-[#faf7f2] px-3 py-1 rounded-full text-sm mr-2 mb-2">
+                <span key={key} className="inline-block bg-[#2C7A7B] font-inter font-semibold text-[#D7FDFE] px-3 py-1 rounded-full text-sm mr-2 mb-2">
                   {tech}
                 </span>
               ))}

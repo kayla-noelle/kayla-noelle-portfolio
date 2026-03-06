@@ -41,10 +41,10 @@ export default function About() {
         <p className="font-inter text-[#1c1c1c] leading-relaxed">
           I'm a developer and designer who longs to inspire brands and companies to captivate their users with stunning digital experiences!
           <br /><br />
-          After earning my B.A. in Graphic Design from San Diego State (Go Aztecs!)I kicked off my design career working with cross-functional teams on branding, publications, and digital experiences. But I knew I wanted to make a more meaningful impact in my work. So that's why in 2021 I decided to add in a special skill in my arsenal, Full Stack Engineering with Thinkful! After much sweat, tears, and support from my loved ones…I completed my course!
+          After earning my B.A. in Graphic Design from San Diego StateI kicked off my design career working with cross-functional teams on branding, publications, and digital experiences. But I knew I wanted to make a more meaningful impact in my work. So that's why in 2021 I decided to add in a special skill in my arsenal, Full Stack Engineering with Thinkful! After much sweat, tears, and support from my loved ones…I completed my course!
           <br /><br />
           Today I combine design and my engineering discipline to create stunning, intuitive interfaces and user-focused products that not only look great but work even better.
-          <br></br>
+          <br /><br />
           When I'm off the clock, you'll usually find me fueling my caffeine addiction, enjoying other creative hobbies like painting or pretending I'm running from zombies at the gym.
 
         </p>
