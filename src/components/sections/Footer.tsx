@@ -1,6 +1,6 @@
 export default function Projects() {
 return(
-    <section id="projects" className="py-16 flex flex-col items-center justify-center p-8 bg-white">
+    <section id="projects" className="py-16 flex flex-col items-center justify-center p-8 bg-[#fffcf3]">
         <p className="font-inter text-[#1c1c1c]">Designed by Kayla Noelle Chavez, 2026</p>
         <div className="flex items-center gap-6 mt-4">
           <a href="https://www.linkedin.com/in/kayla-noelle-chavez/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-[#1c1c1c] hover:text-[#2C7A7B] transition-colors">
@@ -14,6 +14,17 @@ return(
             </svg>
           </a>
         </div>
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="mt-4 flex items-center gap-1 font-inter text-sm text-[#1c1c1c] focus:outline-none"
+          aria-label="Back to top"
+        >
+          Back to the Top
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="12" y1="19" x2="12" y2="5" />
+            <polyline points="5 12 12 5 19 12" />
+          </svg>
+        </button>
     </section>
 )
 }

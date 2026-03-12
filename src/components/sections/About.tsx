@@ -1,41 +1,65 @@
 //import { RevealOnScroll } from "../RevealOnScroll";
 import PixelProfile from '../../assets/profile-picture.png'
+import { useState } from "react";
 // import { TerminalSkills } from "../TerminalSkills";
+
+const experience = [
+  {
+    title: "Front End Developer",
+    company: "Tubby Todd",
+    dates: "2021 - 2025",
+    description: "I ensured quality and performance of Shopify based e-commerce platform through developing and deploying scripts. Conducted extensive testing to validate new features, troubleshoot bugs, and maintain site stability across devices and browsers.",
+  },
+  {
+    title: "Social Media Graphic Designer",
+    company: "ReviewBoost",
+    dates: "2021 - 2021",
+    description: "At Review Boost, I created branded social content, digital assets, and visual templates used across multiple marketing channels. I partnered with the marketing team to support campaigns with eye-catching, conversion-friendly graphics.",
+  },
+  {
+    title: "Lead Graphic Designer",
+    company: "Preserve Magazine",
+    dates: "2019 - 2021",
+    description: "As the sole designer for a lifestyle publication, I owned everything from layout design and editorial visuals to brand assets and print production. Working directly with the magazine's founder, I shaped the visual direction of each issue and brought every edition to life with clean, cohesive design.",
+  },
+  {
+    title: "Graphic Designer",
+    company: "Museum of Man",
+    dates: "2020 - 2020",
+    description: "At the Museum of Man, I produced exhibition visuals, print collateral, and digital designs that supported community-focused programming. I worked within established brand guidelines while helping evolve the museum's visual language.",
+  },
+  {
+    title: "Graphic Designer Intern",
+    company: "City of Carlsbad",
+    dates: "2019 - 2019",
+    description: "I supported the city's in-house design team by creating marketing materials, event graphics, social content, and community outreach collateral. I collaborated with multiple departments to keep designs clear, accessible, and on brand.",
+  },
+];
+
 export default function About() {
   const skills = [" JavaScript ", "TypeScript", "React", "Vue", "Shopify", "Graphic Design", "Figma", "Full Stack Development"];
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
     return (
-      <section id="about" className="py-8 bg-white min-h-screen relative">
-        {/* Background blobs */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-10 right-1/4 w-64 h-64 bg-[#2C7A7B] opacity-20 rounded-full blur-3xl"></div>
-          <div className="absolute top-40 left-1/4 w-80 h-80 bg-sky-400 opacity-15 rounded-full blur-3xl"></div>
-        </div>
-      <div className="max-w-6xl mx-auto px-4 relative">
+      <section id="about" className="py-8 bg-[#fffcf3] min-h-screen">
+      <div className="max-w-6xl mx-auto px-4">
           <div
             className="rounded-2xl mb-8 p-8 md:p-12 transition-all hover:-translate-y-1"
-            style={{
-              background: "rgba(255, 255, 255, 0.25)",
-              backdropFilter: "blur(20px)",
-              WebkitBackdropFilter: "blur(20px)",
-              border: "1px solid rgba(255, 255, 255, 0.45)",
-              boxShadow: "0 8px 32px rgba(44, 122, 123, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.6), inset 0 -1px 0 rgba(44, 122, 123, 0.08)",
-            }}
           >
 
     <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
 
       {/* Image */}
-      <div className="order-1 md:order-2 flex justify-center md:justify-end">
+      <div className="order-1 flex justify-center md:justify-start">
         <img
           src={PixelProfile}
           alt="Profile Picture of Kayla Noelle"
-          className="w-56 h-56 md:w-100 md:h-150 object-cover rounded-xl shadow-lg"
+          className="w-56 h-56 md:w-100 md:h-150 object-cover rounded-xl"
         />
       </div>
 
       {/* Text */}
-      <div className="order-2 md:order-1 text-left">
-        <h2 className="text-5xl font-bold text-[#1c1c1c] mb-3 animate-slide-left-fade">
+      <div className="order-2 text-left">
+        <h2 className="font-epilogue text-5xl font-bold text-[#1c1c1c] mb-3 animate-slide-left-fade">
           So, who am I?
         </h2>
         <p className="font-inter text-[#1c1c1c] leading-relaxed">
@@ -53,7 +77,7 @@ export default function About() {
     </div>
   </div>
 </div>
-                 <div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-[#2C7A7B] py-3 overflow-hidden">
+                 <div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-[#0d0a07] py-3 overflow-hidden">
                     <div className="flex w-max animate-marquee will-change-transform gap-16 text-xl md:text-2xl text-[#faf7f2]">
                       {[...skills, ...skills].map((skill, index) => (
                         <span key={index} className="flex items-center gap-16">
@@ -65,66 +89,43 @@ export default function About() {
                       ))}
                     </div>
                   </div>
-              {/*Experience */}
-              <div className="max-w-3xl mx-auto px-4">
+              {/* Experience */}
+              <div>
                 <h2 className="text-4xl font-bold mb-8 mt-8 text-[#1c1c1c] text-center animate-slide-left-fade">
                   Experience
                 </h2>
-                {/*vertical line starts here*/}
-                <div className="relative">
-                  <ul className="timeline">
-                    <li>
-                      <div className="direction-r">
-                        <div className="job-title">
-                          <h4 className="text-[22px] text-[#1c1c1c] font-inter text-left font-bold">Front End Developer</h4>
-                          <h5 className="text-[#1c1c1c] font-inter text-left font-bold">Tubby Todd 2021 - 2025</h5>
-                          <p className="text-[14px] font-inter text-left text-[#1c1c1c]">I ensured quality and performance of Shopify based e-commerce platform through developing and deploying scripts.
-                            Conducted extensive testing to validate new features, troubleshoot bugs, and maintain site stability across devices and browsers
-                          </p>
+                <div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+                  {experience.map((job, index) => (
+                    <div key={index} className="border-t border-[#0d0a07] md:border-[#0d0a07] last:border-b">
+                      <button
+                        className="w-full flex items-center justify-between px-6 md:px-16 lg:px-32 py-4 text-left hover:bg-[#0d0a07]/5 transition-colors"
+                        onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                        aria-expanded={openIndex === index}
+                      >
+                        <div>
+                          <span className="block font-inter font-bold text-[#1c1c1c] text-lg">{job.title}</span>
+                          <span className="block font-inter text-sm text-[#1c1c1c]/70">{job.company} &middot; {job.dates}</span>
                         </div>
+                        <svg
+                          className={`shrink-0 ml-4 w-5 h-5 transition-transform duration-300 ${openIndex === index ? "rotate-180" : ""}`}
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                      </button>
+                      <div
+                        className={`overflow-hidden transition-all duration-300 ${openIndex === index ? "max-h-96" : "max-h-0"}`}
+                      >
+                        <p className="font-inter text-[14px] text-[#1c1c1c] px-6 md:px-16 lg:px-32 pb-5 leading-relaxed text-left">{job.description}</p>
                       </div>
-                    </li>
-                    <li>
-                      <div className="direction-r">
-                        <div className="job-title">
-                          <h4 className="text-[22px] text-[#1c1c1c] font-inter text-left font-bold">Social Media Graphic Designer</h4>
-                          <h5 className="text-[#1c1c1c] font-inter text-left font-bold">ReviewBoost 2021 - 2021</h5>
-                          <p className="text-[14px] font-inter text-left text-[#1c1c1c]">At Review Boost, I created branded social content, digital assets, and visual templates used across multiple marketing channels. I partnered with the marketing team to support campaigns with eye-catching, conversion-friendly graphics.
-                          </p>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="direction-r">
-                        <div className="job-title">
-                          <h4 className="text-[22px] text-[#1c1c1c] font-inter text-left font-bold">Lead Graphic Designer</h4>
-                          <h5 className="text-[#1c1c1c] font-inter text-left font-bold">Preserve Magazine 2019 - 2021</h5>
-                          <p className="text-[14px] font-inter text-left text-[#1c1c1c]">As the sole designer for a lifestyle publication, I owned everything from layout design and editorial visuals to brand assets and print production. Working directly with the magazine's founder, I shaped the visual direction of each issue and brought every edition to life with clean, cohesive design.
-                          </p>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="direction-r">
-                        <div className="job-title">
-                          <h4 className="text-[22px] text-[#1c1c1c] font-inter text-left font-bold">Graphic Designer</h4>
-                          <h5 className="text-[#1c1c1c] font-inter text-left font-bold">Museum of Man 2020 - 2020</h5>
-                          <p className="text-[14px] font-inter text-left text-[#1c1c1c]">At the Museum of Man, I produced exhibition visuals, print collateral, and digital designs that supported community-focused programming. I worked within established brand guidelines while helping evolve the museum's visual language.
-                          </p>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="direction-r">
-                        <div className="job-title">
-                          <h4 className="text-[22px] text-[#1c1c1c] font-inter text-left font-bold">Graphic Designer Intern</h4>
-                          <h5 className="text-[#1c1c1c] font-inter text-left font-bold">City of Carlsbad 2019 - 2019</h5>
-                          <p className="text-[14px] font-inter text-left text-[#1c1c1c]">I supported the city's in-house design team by creating marketing materials, event graphics, social content, and community outreach collateral. I collaborated with multiple departments to keep designs clear, accessible, and on brand.
-                          </p>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
+                    </div>
+                  ))}
                 </div>
               </div>
       </section>

@@ -8,18 +8,18 @@ export default function Navbar({ menuOpen, setMenuOpen }: { menuOpen: boolean; s
   }, [menuOpen]);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-40 bg-white shadow-sm">
+    <nav className="fixed top-0 left-0 right-0 z-40 bg-[#fffcf3] shadow-sm">
       <div className="max-w-5xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          <a href="#home" className="font-unica font-bold text-lg text-[#1c1c1c]">Kayla Noelle</a>
+          <a href="#home" className="font-unica font-semibold text-lg text-[#1c1c1c]">Kayla Noelle</a>
           <div className="w-7 h-7 relative text-2xl text-[#1c1c1c] cursor-pointer z-40 md:hidden absolute" onClick={() => setMenuOpen(prev => !prev)}>
             &#9776;
           </div>
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#home" className="nav-item relative font-unica font-normal text-lg text-[#1c1c1c] hover:text-[#1c1c1c] transition-colors">Home</a>
-            <a href="#about" className="nav-item relative font-unica font-normal text-lg text-[#1c1c1c] hover:text-[#1c1c1c] transition-colors">About</a>
-            <a href="#projects" className="nav-item relative font-unica font-normal text-lg text-[#1c1c1c] hover:text-[#1c1c1c] transition-colors">Projects</a>
-            <a href="#contact" className="nav-item relative font-unica font-normal text-lg text-[#1c1c1c] hover:text-[#1c1c1c] transition-colors">Contact</a>
+            <a href="#home" className="nav-item relative font-unica font-semibold text-lg text-[#1c1c1c] hover:text-[#1c1c1c] transition-colors">Home</a>
+            <a href="#about" className="nav-item relative font-unica font-semibold text-lg text-[#1c1c1c] hover:text-[#1c1c1c] transition-colors">About</a>
+            <a href="#projects" className="nav-item relative font-unica font-semibold text-lg text-[#1c1c1c] hover:text-[#1c1c1c] transition-colors">Projects</a>
+            <a href="#contact" className="nav-item relative font-unica font-semibold text-lg text-[#1c1c1c] hover:text-[#1c1c1c] transition-colors">Contact</a>
           </div>
         </div>
       </div>

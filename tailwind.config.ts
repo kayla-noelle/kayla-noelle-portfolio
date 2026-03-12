@@ -9,7 +9,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        abril:['IBM Plex Sans', "sans-serif"],
+        poppins:['Poppins', "sans-serif"],
+        epilogue:['Epilogue', "sans-serif"],
+        grotesque:['Darker Grotesque', "sans-serif"],
         mono:['IBMPlex-Mono', "sans-serif"],
         inter:['Inter', "sans-serif"]
       },

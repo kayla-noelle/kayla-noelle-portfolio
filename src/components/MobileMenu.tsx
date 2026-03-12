@@ -7,7 +7,7 @@ export default function MobileMenu({ menuOpen, setMenuOpen }: { menuOpen: boolea
       className="fixed font-inter left-0 w-full z-40 flex flex-col items-start justify-center transition-all duration-500 ease-in-out overflow-hidden"
       style={{
         bottom: 0,
-        backgroundColor: "#2C7A7B",
+        backgroundColor: "#0d0a07",
         height: menuOpen ? "100dvh" : "0",
         opacity: menuOpen ? 1 : 0,
         transform: menuOpen ? "translateY(0)" : "translateY(100%)",
@@ -24,10 +24,10 @@ export default function MobileMenu({ menuOpen, setMenuOpen }: { menuOpen: boolea
           &times;
         </button>
       </div>
-      <a href="#home" onClick={() => setMenuOpen(false)} className={`text-2xl font-semibold text-white mt-4 pb-4 px-8 w-full text-left transform transition-all duration-300 ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`} style={{ borderBottom: "1px solid #33afa0" }}>Home</a>
-      <a href="#about" onClick={() => setMenuOpen(false)} className={`text-2xl font-semibold text-white mt-4 pb-4 px-8 w-full text-left transform transition-all duration-300 ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`} style={{ borderBottom: "1px solid #33afa0" }}>About</a>
-      <a href="#projects" onClick={() => setMenuOpen(false)} className={`text-2xl font-semibold text-white mt-4 pb-4 px-8 w-full text-left transform transition-all duration-300 ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`} style={{ borderBottom: "1px solid #33afa0" }}>Projects</a>
-      <a href="#contact" onClick={() => setMenuOpen(false)} className={`text-2xl font-semibold text-white mt-4 pb-4 px-8 w-full text-left transform transition-all duration-300 ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`} style={{ borderBottom: "1px solid #33afa0" }}>Contact</a>
+      <a href="#home" onClick={() => setMenuOpen(false)} className={`text-2xl font-semibold text-white mt-4 pb-4 px-8 w-full text-left transform transition-all duration-300 ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`} style={{ borderBottom: "1px solid rgba(255,255,255,0.15)" }}>Home</a>
+      <a href="#about" onClick={() => setMenuOpen(false)} className={`text-2xl font-semibold text-white mt-4 pb-4 px-8 w-full text-left transform transition-all duration-300 ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`} style={{ borderBottom: "1px solid rgba(255,255,255,0.15)" }}>About</a>
+      <a href="#projects" onClick={() => setMenuOpen(false)} className={`text-2xl font-semibold text-white mt-4 pb-4 px-8 w-full text-left transform transition-all duration-300 ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`} style={{ borderBottom: "1px solid rgba(255,255,255,0.15)" }}>Projects</a>
+      <a href="#contact" onClick={() => setMenuOpen(false)} className={`text-2xl font-semibold text-white mt-4 pb-4 px-8 w-full text-left transform transition-all duration-300 ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`} style={{ borderBottom: "1px solid rgba(255,255,255,0.15)" }}>Contact</a>
       <div className={`absolute bottom-10 left-8 flex gap-6 transform transition-all duration-300 ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}>
         <a href="https://www.linkedin.com/in/kayla-noelle-chavez/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-white">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;500;600;700;800;900&family=Epilogue:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 @tailwind base;
 @tailwind components;
@@ -8,14 +8,20 @@ html, body {
   margin:0;
   font-family: 'Inter', sans-serif;
   padding:0;
-  background: #ffffff;
+  background: #fffcf3;
   color: #121212; 
   justify-content: center;
   box-sizing: border-box;
 }
 
-h1, h2, h3, h4, .font-unica {
-  font-family: 'IBM Plex Sans', sans-serif;
+h2, h3, h4, .font-unica {
+  font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+  font-family: 'Darker Grotesque', sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.03em;
 }
 
 @font-face {
@@ -122,7 +128,7 @@ h1, h2, h3, h4, .font-unica {
   position: relative;
   overflow: hidden;
   padding: 0.75rem 1.5rem; /* equivalent to px-6 py-3 */
-  font-family: 'Abril', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 1.125rem; /* text-lg */
   font-weight: 500;    /* medium */
   border-radius: 9999px; /* rounded */
@@ -139,7 +145,7 @@ h1, h2, h3, h4, .font-unica {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: #2C7A7B; /* light mode background fill */
+  background-color: #0d0a07; /* light mode background fill */
   transition: width 0.3s ease;
   z-index: -1;
 }
@@ -180,7 +186,7 @@ h1, h2, h3, h4, .font-unica {
   left: 0%;
   width: 0;              /* start hidden */
   height: 2px;           /* thickness of the line */
-  background-color: #2C7A7B;
+  background-color: #fd601a;
   transition: width 0.3s ease;
 }
 
@@ -198,7 +204,7 @@ h1, h2, h3, h4, .font-unica {
   transform: translateY(-50%);
   width: 0;              /* start hidden */
   height: 2px;           /* thickness of the line */
-  background-color: #b178da; /* blue */
+  background-color: #fd601a; /* blue */
   transition: width 0.3s ease;
 }
 

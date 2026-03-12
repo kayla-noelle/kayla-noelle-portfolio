@@ -9,12 +9,12 @@ export const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
   }, [onComplete]);
 
   return (
-    <div className="fixed inset-0 z-50 bg-white text-[#1c1c1c] flex flex-col items-center justify-center gap-6">
-      <p className="font-inter text-2xl tracking-widest">Loading</p>
+    <div className="fixed inset-0 z-50 bg-[#fffcf3] text-[#1c1c1c] flex flex-col items-center justify-center gap-6">
+      <p className="font-poppins text-2xl tracking-widest">Loading</p>
       <div className="flex items-end gap-2">
-        <div className="w-2 bg-[#2C7A7B] rounded-full animate-bar-1" style={{ height: '12px' }}></div>
-        <div className="w-2 bg-[#2C7A7B] rounded-full animate-bar-2" style={{ height: '12px' }}></div>
-        <div className="w-2 bg-[#2C7A7B] rounded-full animate-bar-3" style={{ height: '12px' }}></div>
+        <div className="w-2 bg-[#fd601a] rounded-full animate-bar-1" style={{ height: '12px' }}></div>
+        <div className="w-2 bg-[#fd601a] rounded-full animate-bar-2" style={{ height: '12px' }}></div>
+        <div className="w-2 bg-[#fd601a] rounded-full animate-bar-3" style={{ height: '12px' }}></div>
       </div>
     </div>
   );
