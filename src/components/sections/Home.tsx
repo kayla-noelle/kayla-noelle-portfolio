@@ -30,8 +30,8 @@ export default function Home({ isLoaded }: HomeProps) {
   }, []);
 
   return (
-    <section id="home" className="min-h-[80vh] md:min-h-screen flex items-center justify-center relative bg-[#fffcf3] py-12 md:py-0">
-      <div className="text-left z-10 px-8 md:px-4 py-8 md:py-0 w-full max-w-lg md:max-w-none md:w-auto mx-auto md:mx-0">
+    <section id="home" className="min-h-screen flex items-center justify-center relative bg-[#fffcf3] py-16 md:py-0">
+      <div className="text-left z-10 px-8 md:px-4 py-10 md:py-0 w-full max-w-lg md:max-w-none md:w-auto mx-auto md:mx-0">
         <div className="bg-gradient">
           <div className="absolute inset-0 top-[50px] flex justify-center">
              <div className="bg-shape1 bg-[#9342fc] opacity-50 bg-blur"></div>
@@ -41,12 +41,12 @@ export default function Home({ isLoaded }: HomeProps) {
         </div>
        
         <h1
-          className="relative z-10 font-grotesque font-black text-5xl md:text-9xl text-left mb-6 text-[#1c1c1c] tracking-tight"
+          className="relative z-10 font-grotesque font-black text-6xl md:text-9xl text-left mb-6 text-[#1c1c1c] tracking-tight"
         >
           Hi, I'm <br/>Kayla Noelle <br/> 
         </h1>
         <p
-          className={`font-inter font-normal md:text-3xl text-[#1c1c1c] text-left mb-4 whitespace-normal md:whitespace-nowrap transform ${
+          className={`font-inter font-normal text-xl md:text-3xl text-[#1c1c1c] text-left mb-4 whitespace-normal md:whitespace-nowrap transform ${
             animate ? "animate-slide-up-fade delay-200" : "opacity-0"
           }`}
         >

@@ -32,6 +32,7 @@ export default function Contact() {
           <h2 className="text-[#1c1c1c] text-4xl font-bold mb-8">Get in Touch</h2>
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="relative">
+              <label htmlFor="name" className="block font-inter text-sm font-medium text-[#1c1c1c] mb-1">Name</label>
               <input
               type="text"
               id="name"
@@ -43,6 +44,7 @@ export default function Contact() {
               placeholder="Name..." />
             </div>
             <div className="relative">
+              <label htmlFor="email" className="block font-inter text-sm font-medium text-[#1c1c1c] mb-1">Email</label>
               <input
               type="email"
               id="email"
@@ -54,6 +56,7 @@ export default function Contact() {
               placeholder="example@example.com" />
             </div>
             <div className="relative">
+              <label htmlFor="message" className="block font-inter text-sm font-medium text-[#1c1c1c] mb-1">Message</label>
               <textarea
               id="message"
               name="message"
