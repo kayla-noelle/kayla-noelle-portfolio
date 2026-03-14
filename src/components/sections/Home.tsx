@@ -25,18 +25,18 @@ export default function Home({}: HomeProps) {
             <h1 className="font-grotesque font-black text-7xl md:text-[11rem] text-[#1c1c1c] tracking-tight leading-none -mt-4 md:-mt-8">
               Engineer
             </h1>
+            <div className="flex items-center gap-2 mt-2 md:ml-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse shrink-0 shadow-[0_0_8px_3px_rgba(34,197,94,0.7)]"></span>
+              <span className="font-inter text-sm text-[#1c1c1c]/70">Open to opportunities</span>
+            </div>
           </div>
           <span className="font-grotesque font-black text-[#9342fc] tracking-tight leading-none self-stretch flex items-center text-[7rem] md:text-[15rem]">
             &
           </span>
         </div>
         <p className="font-inter text-[16px] md:text-[24px] text-[#1c1c1c] text-left mb-4 w-full md:pl-[24rem]">
-          Hi I'm Kayla Noelle, passionate about crafting beautiful and considered digital experiences.
+          Hi, I'm Kayla Noelle and I'm passionate about crafting beautiful and thoughtful digital experiences.
         </p>
-        <div className="flex items-center gap-2">
-          <span className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse shrink-0"></span>
-          <span className="font-inter text-sm text-[#1c1c1c]/70">Open to opportunities</span>
-        </div>
       </div>
     </section>
   );

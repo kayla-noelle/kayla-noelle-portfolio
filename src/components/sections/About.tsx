@@ -1,11 +1,11 @@
 //import { RevealOnScroll } from "../RevealOnScroll";
 import PixelProfile from '../../assets/profile-picture.png'
-import { useState } from "react";
+import React, { useState } from "react";
 // import { TerminalSkills } from "../TerminalSkills";
 
 const experience = [
   {
-    title: "Front End Developer",
+    title: "Front End Engineer",
     company: "Tubby Todd",
     dates: "2021 - 2025",
     description: "I ensured quality and performance of Shopify based e-commerce platform through developing and deploying scripts. Conducted extensive testing to validate new features, troubleshoot bugs, and maintain site stability across devices and browsers.",
@@ -36,9 +36,41 @@ const experience = [
   },
 ];
 
+const tabs = ["Intro", "Background", "Values", "Hobbies"] as const;
+type Tab = typeof tabs[number];
+
+const tabContent: Record<Tab, React.ReactNode> = {
+  Intro: (
+    <p className="font-inter text-[#1c1c1c] leading-relaxed">
+      I'm a designer and engineer who longs to inspire brands and companies to captivate their users with stunning digital experiences!
+    </p>
+  ),
+  Background: (
+    <p className="font-inter text-[#1c1c1c] leading-relaxed">
+      After earning my B.A. in Graphic Design from San Diego State I kicked off my design career working with cross-functional teams on branding, publications, and digital experiences. But I knew I wanted to make a more meaningful impact in my work. So that's why in 2021 I decided to add in a special skill in my arsenal, Full Stack Engineering with Thinkful! After much sweat, tears, and support from my loved ones…I completed my course!
+      <br /><br />
+      Today I combine design and my engineering discipline to create stunning, intuitive interfaces and user-focused products that not only look great but work even better.
+    </p>
+  ),
+  Values: (
+    <div className="font-inter text-[24px] text-[#1c1c1c] leading-relaxed space-y-2">
+      <p>Accessible</p>
+      <p>Thoughtful</p>
+      <p>Beautiful</p>
+      <p>Well Made</p>
+    </div>
+  ),
+  Hobbies: (
+    <p className="font-inter text-[#1c1c1c] leading-relaxed">
+      When I'm off the clock, you'll usually find me fueling my caffeine addiction, enjoying other creative hobbies like painting and reading, or pretending I'm running from zombies at the gym.
+    </p>
+  ),
+};
+
 export default function About() {
-  const skills = [" JavaScript ", "TypeScript", "React", "Vue", "Shopify", "Graphic Design", "Figma", "Full Stack Development"];
+  const skills = [" JavaScript ", "TypeScript", "React", "Vue", "Shopify", "Graphic Design", "Figma", "Full Stack Development", "UI/UX", "AI Prompt"];
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [activeTab, setActiveTab] = useState<Tab>("Intro");
     return (
       <section id="about" className="py-8 bg-[#fffcf3] min-h-screen">
       <div className="max-w-6xl mx-auto px-4">
@@ -46,7 +78,7 @@ export default function About() {
             className="rounded-2xl mb-8 p-8 md:p-12 transition-all hover:-translate-y-1"
           >
 
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
 
       {/* Image */}
       <div className="order-1 flex justify-center md:justify-start">
@@ -62,16 +94,23 @@ export default function About() {
         <h2 className="font-epilogue text-5xl font-bold text-[#1c1c1c] mb-3 animate-slide-left-fade">
           So, who am I?
         </h2>
-        <p className="font-inter text-[#1c1c1c] leading-relaxed">
-          I'm a developer and designer who longs to inspire brands and companies to captivate their users with stunning digital experiences!
-          <br /><br />
-          After earning my B.A. in Graphic Design from San Diego StateI kicked off my design career working with cross-functional teams on branding, publications, and digital experiences. But I knew I wanted to make a more meaningful impact in my work. So that's why in 2021 I decided to add in a special skill in my arsenal, Full Stack Engineering with Thinkful! After much sweat, tears, and support from my loved ones…I completed my course!
-          <br /><br />
-          Today I combine design and my engineering discipline to create stunning, intuitive interfaces and user-focused products that not only look great but work even better.
-          <br /><br />
-          When I'm off the clock, you'll usually find me fueling my caffeine addiction, enjoying other creative hobbies like painting or pretending I'm running from zombies at the gym.
-
-        </p>
+        {/* Tabs */}
+        <div className="flex justify-center md:justify-start gap-6 mb-4 border-b border-[#0d0a07]/20">
+          {tabs.map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              className={`font-inter text-sm pb-2 transition-colors ${
+                activeTab === tab
+                  ? "text-[#9342fc] border-b-2 border-[#9342fc] font-semibold"
+                  : "text-[#1c1c1c]/50 hover:text-[#1c1c1c]"
+              }`}
+            >
+              {tab}
+            </button>
+          ))}
+        </div>
+        <div className="min-h-[120px]">{tabContent[activeTab]}</div>
       </div>
 
     </div>
