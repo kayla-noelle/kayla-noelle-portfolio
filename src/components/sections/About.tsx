@@ -1,6 +1,60 @@
 //import { RevealOnScroll } from "../RevealOnScroll";
 import PixelProfile from '../../assets/profile-picture.png'
+import europe1 from '../../assets/europe-trip/europe1.jpg'
+import europe2 from '../../assets/europe-trip/europe2.jpg'
+import europe3 from '../../assets/europe-trip/europe3.jpg'
+import europe4 from '../../assets/europe-trip/europe4.jpg'
+import europe5 from '../../assets/europe-trip/europe5.jpg'
+import europe6 from '../../assets/europe-trip/europe6.jpg'
 import React, { useState } from "react";
+
+const europePhotos = [europe1, europe2, europe3, europe4, europe5, europe6];
+
+function EuropeCarousel() {
+  const [current, setCurrent] = useState(0);
+  const prev = () => setCurrent((i) => (i === 0 ? europePhotos.length - 1 : i - 1));
+  const next = () => setCurrent((i) => (i === europePhotos.length - 1 ? 0 : i + 1));
+  return (
+    <div className="mt-4">
+      <p className="font-inter text-sm text-[#1c1c1c]/60 mb-3">check out my latest trip!</p>
+      <div className="relative w-full max-w-xs overflow-hidden rounded-2xl" style={{ aspectRatio: "3/4" }}>
+        <img
+          src={europePhotos[current]}
+          alt={`Europe trip photo ${current + 1}`}
+          className="w-full h-full object-cover rounded-2xl"
+        />
+        {/* Prev button */}
+        <button
+          onClick={prev}
+          className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white/90 text-[#1c1c1c] rounded-full w-9 h-9 flex items-center justify-center shadow transition"
+          aria-label="Previous photo"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        {/* Next button */}
+        <button
+          onClick={next}
+          className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white/90 text-[#1c1c1c] rounded-full w-9 h-9 flex items-center justify-center shadow transition"
+          aria-label="Next photo"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        {/* Dot indicators */}
+        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
+          {europePhotos.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrent(i)}
+              className={`w-2 h-2 rounded-full transition-all ${i === current ? "bg-white scale-125" : "bg-white/50"}`}
+              aria-label={`Go to photo ${i + 1}`}
+            />
+          ))}
+        </div>
+      </div>
+      <p className="font-inter text-xs text-[#1c1c1c]/40 text-center mt-2">{current + 1} / {europePhotos.length}</p>
+    </div>
+  );
+}
 // import { TerminalSkills } from "../TerminalSkills";
 
 const experience = [
@@ -66,9 +120,12 @@ const tabContent: Record<Tab, React.ReactNode> = {
     </div>
   ),
   Hobbies: (
-    <p className="font-inter text-[#1c1c1c] leading-relaxed">
-      When I'm off the clock, you'll usually find me fueling my caffeine addiction, enjoying other creative hobbies like painting and reading, or daydreaming about my next travel destination!
-    </p>
+    <div>
+      <p className="font-inter text-[#1c1c1c] leading-relaxed">
+        When I'm off the clock, you'll usually find me fueling my caffeine addiction, enjoying other creative hobbies like painting and reading, or daydreaming about my next travel destination!
+      </p>
+      <EuropeCarousel />
+    </div>
   ),
 };
 
@@ -100,14 +157,14 @@ export default function About() {
           So, who am I?
         </h2>
         {/* Tabs */}
-        <div className="flex justify-center md:justify-start gap-6 mb-4 border-b border-[#0d0a07]/20">
+        <div className="flex justify-start gap-6 mb-4 border-b border-[#0d0a07]/20">
           {tabs.map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
               className={`font-inter text-sm pb-2 transition-colors ${
                 activeTab === tab
-                  ? "text-[#9342fc] border-b-2 border-[#9342fc] font-semibold"
+                  ? "text-orange-500 border-b-2 border-orange-500 font-semibold"
                   : "text-[#1c1c1c]/50 hover:text-[#1c1c1c]"
               }`}
             >
@@ -115,7 +172,7 @@ export default function About() {
             </button>
           ))}
         </div>
-        <div className="min-h-[120px]">{tabContent[activeTab]}</div>
+        <div className="min-h-[120px] transition-all">{tabContent[activeTab]}</div>
       </div>
 
     </div>
