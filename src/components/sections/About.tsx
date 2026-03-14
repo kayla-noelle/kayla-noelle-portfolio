@@ -53,16 +53,21 @@ const tabContent: Record<Tab, React.ReactNode> = {
     </p>
   ),
   Values: (
-    <div className="font-inter text-[24px] text-[#1c1c1c] leading-relaxed space-y-2">
-      <p>Accessible</p>
-      <p>Thoughtful</p>
-      <p>Beautiful</p>
-      <p>Well Made</p>
+    <div className="text-left">
+      <div className="font-inter text-[24px] text-[#1c1c1c] leading-relaxed space-y-2">
+        <p>Accessible</p>
+        <p>Thoughtful</p>
+        <p>Beautiful</p>
+        <p>Well Made</p>
+      </div>
+      <p className="font-inter text-[#1c1c1c] leading-relaxed mt-4">
+        These are the design values I abide by in my work. I strongly believe that good design is accessible to everyone. Good design is thoughtful and takes in the considerations of the user's needs. When something is well made and beautiful whether it's a digital interface or a physical object, it reflects care, clarity, and respect for the users who will use it. When I combine these four design values, the design becomes more than functional, it becomes something that improves everyday life. 
+      </p>
     </div>
   ),
   Hobbies: (
     <p className="font-inter text-[#1c1c1c] leading-relaxed">
-      When I'm off the clock, you'll usually find me fueling my caffeine addiction, enjoying other creative hobbies like painting and reading, or pretending I'm running from zombies at the gym.
+      When I'm off the clock, you'll usually find me fueling my caffeine addiction, enjoying other creative hobbies like painting and reading, or daydreaming about my next travel destination!
     </p>
   ),
 };
