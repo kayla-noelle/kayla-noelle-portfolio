@@ -4,7 +4,6 @@ import europe1 from '../../assets/europe-trip/europe1.jpg'
 import europe2 from '../../assets/europe-trip/europe2.jpg'
 import europe3 from '../../assets/europe-trip/europe3.jpg'
 import europe4 from '../../assets/europe-trip/europe4.jpg'
-import europe5 from '../../assets/europe-trip/europe5.jpg'
 import europe6 from '../../assets/europe-trip/europe6.jpg'
 import spain1 from '../../assets/europe-trip/IMG_5470.jpeg'
 import spain2 from '../../assets/europe-trip/IMG_5847_VSCO.jpg'
@@ -15,7 +14,7 @@ import bath3 from '../../assets/europe-trip/IMG_5327.jpeg'
 import bath4 from '../../assets/europe-trip/IMG_5698_VSCO.jpg'
 import React, { useState } from "react";
 
-const europePhotos = [europe1, europe2, europe3, europe4, europe5, europe6, spain1, spain2, spain3, bath1, bath2, bath3, bath4];
+const europePhotos = [europe1, europe2, europe3, europe4, europe6, spain1, spain2, spain3, bath1, bath2, bath3, bath4];
 
 function PhotoCarousel({ photos, label }: { photos: string[]; label: string }) {
   const [current, setCurrent] = useState(0);
@@ -168,7 +167,7 @@ export default function About() {
               onClick={() => setActiveTab(tab)}
               className={`font-inter text-sm pb-2 transition-colors ${
                 activeTab === tab
-                  ? "text-orange-500 border-b-2 border-orange-500 font-semibold"
+                  ? "text-[#1c1c1c] border-b-2 border-[#1c1c1c] font-semibold"
                   : "text-[#1c1c1c]/50 hover:text-[#1c1c1c]"
               }`}
             >

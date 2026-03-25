@@ -186,7 +186,7 @@ h1 {
   left: 0%;
   width: 0;              /* start hidden */
   height: 2px;           /* thickness of the line */
-  background-color: #fd601a;
+  background-color: #1c1c1c;
   transition: width 0.3s ease;
 }
 

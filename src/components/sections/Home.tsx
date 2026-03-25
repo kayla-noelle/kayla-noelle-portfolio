@@ -6,20 +6,15 @@ export default function Home({}: HomeProps) {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative bg-[#fffcf3] py-16 md:py-0">
       <div className="text-left z-10 pl-4 pr-6 md:px-4 py-10 md:py-0 w-full md:max-w-none md:w-auto mx-auto md:mx-0">
-        <div className="bg-gradient">
-          <div className="absolute inset-0 top-[50px] flex justify-center">
-             <div className="bg-shape1 bg-[#9342fc] opacity-50 bg-blur"></div>
-         <div className="bg-shape2 bg-[#2C7A7B] opacity-50 bg-blur"></div>
-          <div className="bg-shape3 bg-[#2C7A7B] opacity-50 bg-blur"></div>
-          </div>
-        </div>
-
-        <div className="relative z-10 flex items-stretch gap-3 md:gap-6 mb-6 justify-center md:justify-start">
+<div className="relative z-10 flex items-stretch gap-3 md:gap-6 mb-6 justify-center md:justify-start">
           <div className="flex flex-col">
             <h1 className="font-grotesque font-black text-3xl md:text-5xl text-left text-[#1c1c1c] tracking-tight leading-none -mb-6 md:-mb-12 md:ml-2">
               Creative
             </h1>
-            <h1 className="font-grotesque font-black text-7xl md:text-[11rem] text-[#9342fc] tracking-tight leading-none">
+            <h1
+              className="font-grotesque font-black text-7xl md:text-[11rem] tracking-tight leading-none text-transparent bg-clip-text"
+              style={{ backgroundImage: "url('/starry_night_full.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
+            >
               Designer
             </h1>
             <h1 className="font-grotesque font-black text-7xl md:text-[11rem] text-[#1c1c1c] tracking-tight leading-none -mt-4 md:-mt-8">
@@ -30,7 +25,7 @@ export default function Home({}: HomeProps) {
               <span className="font-inter text-sm text-[#1c1c1c]/70">Open to opportunities</span>
             </div>
           </div>
-          <span className="font-grotesque font-black text-[#9342fc] tracking-tight leading-none self-stretch flex items-center text-[7rem] md:text-[15rem]">
+          <span className="font-grotesque font-black text-[#1c1c1c] tracking-tight leading-none self-stretch flex items-center text-[7rem] md:text-[15rem]">
             &
           </span>
         </div>
@@ -40,7 +35,7 @@ export default function Home({}: HomeProps) {
         <a
           href="/Chavez_Kayla_Resume_.pdf"
           download
-          className="relative z-10 inline-block md:ml-2 mt-2 px-6 py-3 bg-[#9342fc] text-white font-inter font-semibold rounded-full hover:bg-[#7b2fe0] transition-colors"
+          className="relative z-10 inline-block md:ml-2 mt-2 px-6 py-3 bg-[#1c1c1c] text-white font-inter font-semibold rounded-full hover:bg-black transition-colors"
         >
           Download Resume
         </a>
