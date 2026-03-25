@@ -34,9 +34,16 @@ export default function Home({}: HomeProps) {
             &
           </span>
         </div>
-        <p className="font-inter text-[16px] md:text-[24px] text-[#1c1c1c] text-left mb-4 w-full md:pl-[24rem]">
+        <p className="relative z-10 font-inter text-[16px] md:text-[24px] text-[#1c1c1c] text-left mb-4 w-full md:ml-2">
           Hi, I'm Kayla Noelle and I'm passionate about crafting beautiful and thoughtful digital experiences.
         </p>
+        <a
+          href="/Chavez_Kayla_Resume_.pdf"
+          download
+          className="relative z-10 inline-block md:ml-2 mt-2 px-6 py-3 bg-[#9342fc] text-white font-inter font-semibold rounded-full hover:bg-[#7b2fe0] transition-colors"
+        >
+          Download Resume
+        </a>
       </div>
     </section>
   );

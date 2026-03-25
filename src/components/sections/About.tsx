@@ -6,24 +6,30 @@ import europe3 from '../../assets/europe-trip/europe3.jpg'
 import europe4 from '../../assets/europe-trip/europe4.jpg'
 import europe5 from '../../assets/europe-trip/europe5.jpg'
 import europe6 from '../../assets/europe-trip/europe6.jpg'
+import spain1 from '../../assets/europe-trip/IMG_5470.jpeg'
+import spain2 from '../../assets/europe-trip/IMG_5847_VSCO.jpg'
+import spain3 from '../../assets/europe-trip/IMG_5443.jpeg'
+import bath1 from '../../assets/europe-trip/IMG_5191.jpeg'
+import bath2 from '../../assets/europe-trip/IMG_5256.jpeg'
+import bath3 from '../../assets/europe-trip/IMG_5327.jpeg'
+import bath4 from '../../assets/europe-trip/IMG_5698_VSCO.jpg'
 import React, { useState } from "react";
 
-const europePhotos = [europe1, europe2, europe3, europe4, europe5, europe6];
+const europePhotos = [europe1, europe2, europe3, europe4, europe5, europe6, spain1, spain2, spain3, bath1, bath2, bath3, bath4];
 
-function EuropeCarousel() {
+function PhotoCarousel({ photos, label }: { photos: string[]; label: string }) {
   const [current, setCurrent] = useState(0);
-  const prev = () => setCurrent((i) => (i === 0 ? europePhotos.length - 1 : i - 1));
-  const next = () => setCurrent((i) => (i === europePhotos.length - 1 ? 0 : i + 1));
+  const prev = () => setCurrent((i) => (i === 0 ? photos.length - 1 : i - 1));
+  const next = () => setCurrent((i) => (i === photos.length - 1 ? 0 : i + 1));
   return (
     <div className="mt-4">
-      <p className="font-inter text-sm text-[#1c1c1c]/60 mb-3">check out my latest trip!</p>
+      <p className="font-inter text-sm text-[#1c1c1c]/60 mb-3">{label}</p>
       <div className="relative w-full max-w-xs overflow-hidden rounded-2xl" style={{ aspectRatio: "3/4" }}>
         <img
-          src={europePhotos[current]}
-          alt={`Europe trip photo ${current + 1}`}
+          src={photos[current]}
+          alt={`${label} photo ${current + 1}`}
           className="w-full h-full object-cover rounded-2xl"
         />
-        {/* Prev button */}
         <button
           onClick={prev}
           className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white/90 text-[#1c1c1c] rounded-full w-9 h-9 flex items-center justify-center shadow transition"
@@ -31,7 +37,6 @@ function EuropeCarousel() {
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
         </button>
-        {/* Next button */}
         <button
           onClick={next}
           className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white/90 text-[#1c1c1c] rounded-full w-9 h-9 flex items-center justify-center shadow transition"
@@ -39,9 +44,8 @@ function EuropeCarousel() {
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
         </button>
-        {/* Dot indicators */}
         <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
-          {europePhotos.map((_, i) => (
+          {photos.map((_, i) => (
             <button
               key={i}
               onClick={() => setCurrent(i)}
@@ -51,7 +55,7 @@ function EuropeCarousel() {
           ))}
         </div>
       </div>
-      <p className="font-inter text-xs text-[#1c1c1c]/40 text-center mt-2">{current + 1} / {europePhotos.length}</p>
+      <p className="font-inter text-xs text-[#1c1c1c]/40 text-center mt-2">{current + 1} / {photos.length}</p>
     </div>
   );
 }
@@ -122,9 +126,9 @@ const tabContent: Record<Tab, React.ReactNode> = {
   Hobbies: (
     <div>
       <p className="font-inter text-[#1c1c1c] leading-relaxed">
-        When I'm off the clock, you'll usually find me fueling my caffeine addiction, enjoying other creative hobbies like painting and reading, or daydreaming about my next travel destination!
+        When I'm off the clock, you'll usually find me fueling my Diet Coke addiction, enjoying other creative hobbies like painting and drawing, or daydreaming about my next travel destination!
       </p>
-      <EuropeCarousel />
+      <PhotoCarousel photos={europePhotos} label="check out my latest trip!" />
     </div>
   ),
 };
