@@ -80,12 +80,6 @@ const experience = [
     description: "As the sole designer for a lifestyle publication, I owned everything from layout design and editorial visuals to brand assets and print production. Working directly with the magazine's founder, I shaped the visual direction of each issue and brought every edition to life with clean, cohesive design.",
   },
   {
-    title: "Graphic Designer",
-    company: "Museum of Man",
-    dates: "2020 - 2020",
-    description: "At the Museum of Man, I produced exhibition visuals, print collateral, and digital designs that supported community-focused programming. I worked within established brand guidelines while helping evolve the museum's visual language.",
-  },
-  {
     title: "Graphic Designer Intern",
     company: "City of Carlsbad",
     dates: "2019 - 2019",
@@ -133,7 +127,7 @@ const tabContent: Record<Tab, React.ReactNode> = {
 };
 
 export default function About() {
-  const skills = [" JavaScript ", "TypeScript", "React", "Vue", "Shopify", "Graphic Design", "Figma", "Full Stack Development", "UI/UX", "AI Prompt"];
+  const skills = [" JavaScript ", "TypeScript", "React", "Vue", "Shopify", "Design Systems", "Figma", "Full Stack Development", "UI/UX", "AI Assisted Development"];
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [activeTab, setActiveTab] = useState<Tab>("Intro");
     return (
