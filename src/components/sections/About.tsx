@@ -16,19 +16,45 @@ import React, { useState } from "react";
 
 const europePhotos = [europe1, europe2, europe3, europe4, europe6, spain1, spain2, spain3, bath1, bath2, bath3, bath4];
 
-function PhotoCarousel({ photos, label }: { photos: string[]; label: string }) {
+const europePhotoLabels = [
+  "London 2019",
+  "London 2019",
+  "London 2019",
+  "Berlin 2019",
+  "London 2019",
+  "Bristol 2026",
+  "Barcelona 2026",
+  "Bath 2026",
+  "Barcelona 2026",
+  "Barcelona 2026",
+  "Barcelona 2026",
+  "Barcelona 2026",
+];
+
+function PhotoCarousel({ photos, labels, label }: { photos: string[]; labels: string[]; label: string }) {
   const [current, setCurrent] = useState(0);
+  const [hovered, setHovered] = useState(false);
   const prev = () => setCurrent((i) => (i === 0 ? photos.length - 1 : i - 1));
   const next = () => setCurrent((i) => (i === photos.length - 1 ? 0 : i + 1));
   return (
     <div className="mt-4">
       <p className="font-inter text-sm text-[#1c1c1c]/60 mb-3">{label}</p>
-      <div className="relative w-full max-w-xs overflow-hidden rounded-2xl" style={{ aspectRatio: "3/4" }}>
+      <div
+        className="relative w-full max-w-xs overflow-hidden rounded-2xl"
+        style={{ aspectRatio: "3/4" }}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+      >
         <img
           src={photos[current]}
-          alt={`${label} photo ${current + 1}`}
+          alt={`${labels[current]} photo`}
           className="w-full h-full object-cover rounded-2xl"
         />
+        {hovered && (
+          <div className="absolute bottom-12 left-1/2 -translate-x-1/2 bg-[#1c1c1c]/80 text-white font-inter text-xs font-semibold px-3 py-1.5 rounded-lg pointer-events-none whitespace-nowrap backdrop-blur-sm">
+            {labels[current]}
+          </div>
+        )}
         <button
           onClick={prev}
           className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white/90 text-[#1c1c1c] rounded-full w-9 h-9 flex items-center justify-center shadow transition"
@@ -121,7 +147,7 @@ const tabContent: Record<Tab, React.ReactNode> = {
       <p className="font-inter text-[#1c1c1c] leading-relaxed">
         When I'm off the clock, you'll usually find me fueling my Diet Coke addiction, enjoying other creative hobbies like painting and drawing, or daydreaming about my next travel destination!
       </p>
-      <PhotoCarousel photos={europePhotos} label="check out my latest trip!" />
+      <PhotoCarousel photos={europePhotos} labels={europePhotoLabels} label="check out my latest trip!" />
     </div>
   ),
 };
