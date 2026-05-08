@@ -24,8 +24,7 @@ export default function MobileMenu({ menuOpen, setMenuOpen }: { menuOpen: boolea
           &times;
         </button>
       </div>
-      <a href="#home" onClick={() => setMenuOpen(false)} className={`text-2xl font-semibold text-white mt-4 pb-4 px-8 w-full text-left transform transition-all duration-300 ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`} style={{ borderBottom: "1px solid rgba(255,255,255,0.15)" }}>Home</a>
-      <a href="#about" onClick={() => setMenuOpen(false)} className={`text-2xl font-semibold text-white mt-4 pb-4 px-8 w-full text-left transform transition-all duration-300 ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`} style={{ borderBottom: "1px solid rgba(255,255,255,0.15)" }}>About</a>
+<a href="#about" onClick={() => setMenuOpen(false)} className={`text-2xl font-semibold text-white mt-4 pb-4 px-8 w-full text-left transform transition-all duration-300 ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`} style={{ borderBottom: "1px solid rgba(255,255,255,0.15)" }}>About</a>
       <a href="#projects" onClick={() => setMenuOpen(false)} className={`text-2xl font-semibold text-white mt-4 pb-4 px-8 w-full text-left transform transition-all duration-300 ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`} style={{ borderBottom: "1px solid rgba(255,255,255,0.15)" }}>Projects</a>
       <a href="#contact" onClick={() => setMenuOpen(false)} className={`text-2xl font-semibold text-white mt-4 pb-4 px-8 w-full text-left transform transition-all duration-300 ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`} style={{ borderBottom: "1px solid rgba(255,255,255,0.15)" }}>Contact</a>
       <div className={`absolute bottom-10 left-8 flex gap-6 transform transition-all duration-300 ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}>

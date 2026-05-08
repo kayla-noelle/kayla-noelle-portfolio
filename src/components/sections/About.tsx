@@ -1,90 +1,4 @@
-//import { RevealOnScroll } from "../RevealOnScroll";
-import PixelProfile from '../../assets/profile-picture.png'
-import europe1 from '../../assets/europe-trip/europe1.jpg'
-import europe2 from '../../assets/europe-trip/europe2.jpg'
-import europe3 from '../../assets/europe-trip/europe3.jpg'
-import europe4 from '../../assets/europe-trip/europe4.jpg'
-import europe6 from '../../assets/europe-trip/europe6.jpg'
-import spain1 from '../../assets/europe-trip/IMG_5470.jpeg'
-import spain2 from '../../assets/europe-trip/IMG_5847_VSCO.jpg'
-import spain3 from '../../assets/europe-trip/IMG_5443.jpeg'
-import bath1 from '../../assets/europe-trip/IMG_5191.jpeg'
-import bath2 from '../../assets/europe-trip/IMG_5256.jpeg'
-import bath3 from '../../assets/europe-trip/IMG_5327.jpeg'
-import bath4 from '../../assets/europe-trip/IMG_5698_VSCO.jpg'
-import React, { useState } from "react";
-
-const europePhotos = [europe1, europe2, europe3, europe4, europe6, spain1, spain2, spain3, bath1, bath2, bath3, bath4];
-
-const europePhotoLabels = [
-  "London 2019",
-  "London 2019",
-  "London 2019",
-  "Berlin 2019",
-  "London 2019",
-  "Bristol 2026",
-  "Barcelona 2026",
-  "Bath 2026",
-  "Barcelona 2026",
-  "Barcelona 2026",
-  "Barcelona 2026",
-  "Barcelona 2026",
-];
-
-function PhotoCarousel({ photos, labels, label }: { photos: string[]; labels: string[]; label: string }) {
-  const [current, setCurrent] = useState(0);
-  const [hovered, setHovered] = useState(false);
-  const prev = () => setCurrent((i) => (i === 0 ? photos.length - 1 : i - 1));
-  const next = () => setCurrent((i) => (i === photos.length - 1 ? 0 : i + 1));
-  return (
-    <div className="mt-4">
-      <p className="font-inter text-sm text-[#1c1c1c]/60 mb-3">{label}</p>
-      <div
-        className="relative w-full max-w-xs overflow-hidden rounded-2xl"
-        style={{ aspectRatio: "3/4" }}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-      >
-        <img
-          src={photos[current]}
-          alt={`${labels[current]} photo`}
-          className="w-full h-full object-cover rounded-2xl"
-        />
-        {hovered && (
-          <div className="absolute bottom-12 left-1/2 -translate-x-1/2 bg-[#1c1c1c]/80 text-white font-inter text-xs font-semibold px-3 py-1.5 rounded-lg pointer-events-none whitespace-nowrap backdrop-blur-sm">
-            {labels[current]}
-          </div>
-        )}
-        <button
-          onClick={prev}
-          className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white/90 text-[#1c1c1c] rounded-full w-9 h-9 flex items-center justify-center shadow transition"
-          aria-label="Previous photo"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-        </button>
-        <button
-          onClick={next}
-          className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white/90 text-[#1c1c1c] rounded-full w-9 h-9 flex items-center justify-center shadow transition"
-          aria-label="Next photo"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-        </button>
-        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
-          {photos.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrent(i)}
-              className={`w-2 h-2 rounded-full transition-all ${i === current ? "bg-white scale-125" : "bg-white/50"}`}
-              aria-label={`Go to photo ${i + 1}`}
-            />
-          ))}
-        </div>
-      </div>
-      <p className="font-inter text-xs text-[#1c1c1c]/40 text-center mt-2">{current + 1} / {photos.length}</p>
-    </div>
-  );
-}
-// import { TerminalSkills } from "../TerminalSkills";
+import { useState } from "react";
 
 const experience = [
   {
@@ -113,49 +27,10 @@ const experience = [
   },
 ];
 
-const tabs = ["Intro", "Background", "Values", "Hobbies"] as const;
-type Tab = typeof tabs[number];
-
-const tabContent: Record<Tab, React.ReactNode> = {
-  Intro: (
-    <p className="font-inter text-[#1c1c1c] leading-relaxed">
-      I'm a designer and engineer who longs to inspire brands and companies to captivate their users with stunning digital experiences!
-    </p>
-  ),
-  Background: (
-    <p className="font-inter text-[#1c1c1c] leading-relaxed">
-      After earning my B.A. in Graphic Design from San Diego State I kicked off my design career working with cross-functional teams on branding, publications, and digital experiences. But I knew I wanted to make a more meaningful impact in my work. So that's why in 2021 I decided to add in a special skill in my arsenal, Full Stack Engineering with Thinkful! After much sweat, tears, and support from my loved ones…I completed my course!
-      <br /><br />
-      Today I combine design and my engineering discipline to create stunning, intuitive interfaces and user-focused products that not only look great but work even better.
-    </p>
-  ),
-  Values: (
-    <div className="text-left">
-      <div className="font-inter text-[24px] text-[#1c1c1c] leading-relaxed space-y-2">
-        <p>Accessible</p>
-        <p>Thoughtful</p>
-        <p>Beautiful</p>
-        <p>Well Made</p>
-      </div>
-      <p className="font-inter text-[#1c1c1c] leading-relaxed mt-4">
-        These are the design values I abide by in my work. I strongly believe that good design is accessible to everyone. Good design is thoughtful and takes in the considerations of the user's needs. When something is well made and beautiful whether it's a digital interface or a physical object, it reflects care, clarity, and respect for the users who will use it. When I combine these four design values, the design becomes more than functional, it becomes something that improves everyday life. 
-      </p>
-    </div>
-  ),
-  Hobbies: (
-    <div>
-      <p className="font-inter text-[#1c1c1c] leading-relaxed">
-        When I'm off the clock, you'll usually find me fueling my Diet Coke addiction, enjoying other creative hobbies like painting and drawing, or daydreaming about my next travel destination!
-      </p>
-      <PhotoCarousel photos={europePhotos} labels={europePhotoLabels} label="check out my latest trip!" />
-    </div>
-  ),
-};
 
 export default function About() {
   const skills = [" JavaScript ", "TypeScript", "React", "Vue", "Shopify", "Design Systems", "Figma", "Full Stack Development", "UI/UX", "AI Assisted Development"];
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const [activeTab, setActiveTab] = useState<Tab>("Intro");
     return (
       <section id="about" className="py-8 bg-[#fffcf3] min-h-screen">
       <div className="max-w-6xl mx-auto px-4">
@@ -163,39 +38,18 @@ export default function About() {
             className="rounded-2xl mb-8 p-8 md:p-12 transition-all hover:-translate-y-1"
           >
 
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-
-      {/* Image */}
-      <div className="order-1 flex justify-center md:justify-start">
-        <img
-          src={PixelProfile}
-          alt="Profile Picture of Kayla Noelle"
-          className="w-56 h-56 md:w-100 md:h-150 object-cover rounded-xl"
-        />
-      </div>
+    <div className="grid grid-cols-1 gap-10 items-start">
 
       {/* Text */}
-      <div className="order-2 text-left">
+      <div className="text-left">
         <h2 className="font-epilogue text-5xl font-bold text-[#1c1c1c] mb-3 animate-slide-left-fade">
           So, who am I?
         </h2>
-        {/* Tabs */}
-        <div className="flex justify-start gap-6 mb-4 border-b border-[#0d0a07]/20">
-          {tabs.map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`font-inter text-sm pb-2 transition-colors ${
-                activeTab === tab
-                  ? "text-[#1c1c1c] border-b-2 border-[#1c1c1c] font-semibold"
-                  : "text-[#1c1c1c]/50 hover:text-[#1c1c1c]"
-              }`}
-            >
-              {tab}
-            </button>
-          ))}
-        </div>
-        <div className="min-h-[120px] transition-all">{tabContent[activeTab]}</div>
+        <p className="font-inter text-[#1c1c1c] leading-relaxed">
+          After earning my B.A. in Graphic Design from San Diego State I kicked off my design career working with cross-functional teams on branding, publications, and digital experiences. But I knew I wanted to make a more meaningful impact in my work. So that's why in 2021 I decided to add in a special skill in my arsenal, Full Stack Engineering with Thinkful! After much sweat, tears, and support from my loved ones…I completed my course!
+          <br /><br />
+          Today I combine design and my engineering discipline to create stunning, intuitive interfaces and user-focused products that not only look great but work even better.
+        </p>
       </div>
 
     </div>

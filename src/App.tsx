@@ -26,7 +26,7 @@ import { Toaster } from "react-hot-toast";
         <Footer />
         <Toaster position="top-right" reverseOrder={false} />
       </div>
-  
+
     </>
   );
 }
