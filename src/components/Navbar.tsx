@@ -17,7 +17,7 @@ export default function Navbar({ menuOpen, setMenuOpen }: { menuOpen: boolean; s
           </div>
           <div className="hidden md:flex items-center space-x-8">
             <a href="#about" className="nav-item relative font-unica font-semibold text-lg text-[#1c1c1c] hover:text-[#1c1c1c] transition-colors">About</a>
-            <a href="#projects" className="nav-item relative font-unica font-semibold text-lg text-[#1c1c1c] hover:text-[#1c1c1c] transition-colors">Projects</a>
+            <a href="#projects" className="nav-item relative font-unica font-semibold text-lg text-[#1c1c1c] hover:text-[#1c1c1c] transition-colors">Works</a>
             <a href="#contact" className="nav-item relative font-unica font-semibold text-lg text-[#1c1c1c] hover:text-[#1c1c1c] transition-colors">Contact</a>
           </div>
         </div>

@@ -37,7 +37,7 @@ export default function Home({ isLoaded }: HomeProps) {
           </span>
         </div>
         <p className={`relative z-10 font-inter text-[16px] md:text-[24px] text-[#1c1c1c] text-left mb-4 w-full md:ml-2 ${slideUp}`} style={{ animationDelay: '300ms' }}>
-          Hi, I'm Kayla Noelle and I'm a designer engineer who longs to inspire brands and companies to captivate their users with stunning digital experiences.
+          Hi, I'm Kayla Noelle and I'm a front end engineer who longs to inspire brands and companies to captivate their users with stunning digital experiences.
         </p>
         <div className="relative z-10 flex items-center gap-4 mt-2">
           <a
