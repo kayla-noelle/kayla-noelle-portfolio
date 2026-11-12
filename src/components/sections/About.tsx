@@ -2,6 +2,12 @@ import { useState } from "react";
 
 const experience = [
   {
+    title: "Creative Engineer",
+    company: "Helios Worldwide",
+    dates: "2026 - Present",
+    description: "",
+  },
+  {
     title: "Front End Engineer",
     company: "Tubby Todd",
     dates: "2021 - 2025",
@@ -29,7 +35,7 @@ const experience = [
 
 
 export default function About() {
-  const skills = [" JavaScript ", "TypeScript", "React", "Vue", "Shopify", "Design Systems", "Figma", "Full Stack Development", "UI/UX", "AI Assisted Development"];
+  const skills = [" JavaScript ", "TypeScript", "React", "Shopify", "Design Systems", "Figma", "Adobe Creative Cloud", "Visual Design", "UI/UX", "Front End Development"];
   const [openIndex, setOpenIndex] = useState<number | null>(null);
     return (
       <section id="about" className="py-8 bg-[#fffcf3] min-h-screen">
