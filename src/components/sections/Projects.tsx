@@ -4,7 +4,7 @@ export default function Projects() {
   return(
     <section id="projects" className="py-16 flex flex-col items-center justify-center p-8 bg-[#fffcf3]">
       <RevealOnScroll>
-        <h2 className="text-[#1c1c1c] text-4xl font-bold mb-8">Works</h2>
+        <h2 className="text-[#1c1c1c] text-4xl font-bold mb-8">Work</h2>
         <div className="max-w-5xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div

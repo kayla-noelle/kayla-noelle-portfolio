@@ -24,10 +24,25 @@ export default function Contact() {
     }).catch(() => toast.error("That didn’t load. Technology, am I right?"));
   };
     return (
-      <section id="contact" className="py-16 flex items-center justify-center bg-[#fffcf3]">
+      <section id="contact" className="py-16 flex items-center justify-center bg-[#fffcf3] relative overflow-hidden">
+      <div
+        className="bg-gradient pointer-events-none"
+        aria-hidden="true"
+        style={{
+          maskImage: 'radial-gradient(ellipse 50% 50% at 50% 50%, black 40%, transparent 100%)',
+          WebkitMaskImage: 'radial-gradient(ellipse 50% 50% at 50% 50%, black 40%, transparent 100%)',
+        }}
+      >
+        <div className="absolute inset-0 flex justify-center">
+          <div className="bg-shape1 bg-[#9342fc] opacity-50 bg-blur"></div>
+          <div className="bg-shape2 bg-[#f06c9b] opacity-50 bg-blur"></div>
+          <div className="bg-shape3 bg-fuchsia-400 opacity-50 bg-blur"></div>
+          <div className="bg-shape2 bg-[oklch(94.5%_0.129_101.54)] opacity-50 bg-blur" style={{ animationDelay: '-5s' }}></div>
+        </div>
+      </div>
       <RevealOnScroll>
         <div
-          className="w-full px-4 md:w-[600px] mx-auto rounded-2xl p-8 hover:-translate-y-1 transition-all border border-[#0d0a07]"
+          className="relative z-10 w-full px-4 md:w-[600px] mx-auto rounded-2xl p-8 hover:-translate-y-1 transition-all border border-[#0d0a07]"
         >
           <h2 className="text-[#1c1c1c] text-4xl font-bold mb-8">Get in Touch</h2>
           <form className="space-y-6" onSubmit={handleSubmit}>
