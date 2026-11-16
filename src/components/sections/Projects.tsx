@@ -11,7 +11,7 @@ export default function Projects() {
               className="p-6 rounded-2xl hover:-translate-y-1 transition-all border border-[#0d0a07]"
             >
               <h3 className="text-xl font-bold mb-2">
-                <a href="https://github.com/kayla-noelle/that-pizza-place" target="_blank" rel="noopener noreferrer" className="btn-border-reveal inline-flex items-center gap-1 text-sm md:text-base">That Pizza Place<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+                <a href="https://majestic-begonia-ac7c57.netlify.app/" target="_blank" rel="noopener noreferrer" className="btn-border-reveal inline-flex items-center gap-1 text-sm md:text-base">That Pizza Place<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
               </h3>
               <p className="font-inter text-[#1c1c1c] mb-4">Redesigning a beloved Carlsbad pizza place website</p>
                {["React", "JavaScript", "Tailwind CSS", "Claude"].map((tech, key) => (
