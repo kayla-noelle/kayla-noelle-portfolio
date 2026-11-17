@@ -4,7 +4,7 @@ export default function Projects() {
   return(
     <section id="projects" className="py-16 flex flex-col items-center justify-center p-8 bg-[#fffcf3]">
       <RevealOnScroll>
-        <h2 className="text-[#1c1c1c] text-4xl font-bold mb-8">Work</h2>
+        <h2 className="text-[#1c1c1c] font-abril text-4xl font-normal mb-8">Work</h2>
         <div className="max-w-5xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div
@@ -33,6 +33,18 @@ export default function Projects() {
                 </span>
               ))}
             </div>
+            {["Esker Beauty", "Spooge"].map((name) => (
+              <div
+                key={name}
+                className="p-6 rounded-2xl hover:-translate-y-1 transition-all border border-[#0d0a07]"
+              >
+                <h3 className="text-xl font-bold mb-2">
+                  {/* Static pill (no link yet) styled to match the project buttons */}
+                  <span className="inline-flex items-center px-6 py-3 rounded-full border border-[#1c1c1c]/20 font-unica font-medium text-sm md:text-base text-[#1c1c1c]">{name}</span>
+                </h3>
+                <p className="font-inter text-[#1c1c1c] mb-4">Coming Soon</p>
+              </div>
+            ))}
           </div>
         </div>
       </RevealOnScroll>

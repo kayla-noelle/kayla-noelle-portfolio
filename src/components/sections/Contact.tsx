@@ -44,7 +44,7 @@ export default function Contact() {
         <div
           className="relative z-10 w-full px-4 md:w-[600px] mx-auto rounded-2xl p-8 hover:-translate-y-1 transition-all border border-[#0d0a07]"
         >
-          <h2 className="text-[#1c1c1c] text-4xl font-bold mb-8">Get in Touch</h2>
+          <h2 className="text-[#1c1c1c] font-abril text-4xl font-normal mb-8 max-w-lg mx-auto text-balance">Let's Build Something Beautiful Together!</h2>
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="relative">
               <label htmlFor="name" className="block text-left font-inter text-sm font-medium text-[#1c1c1c] mb-1">Your Name</label>
@@ -84,7 +84,7 @@ export default function Contact() {
             </div>
             <button
             type="submit"
-            className="btn-border-reveal w-full bg-[#9342fc] text-white px-6 py-3 rounded-full text-lg font-libre font-bold transition relative overflow-hidden">
+            className="btn-border-reveal w-full px-6 py-3 rounded-full text-lg font-libre font-bold transition relative overflow-hidden">
               Send Message
             </button>
           </form>

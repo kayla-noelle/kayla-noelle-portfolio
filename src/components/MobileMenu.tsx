@@ -15,7 +15,7 @@ export default function MobileMenu({ menuOpen, setMenuOpen }: { menuOpen: boolea
       }}
     >
       <div className="absolute top-4 left-0 right-0 flex items-center justify-between px-8">
-        <span className="font-unica font-bold text-lg text-white">Kayla Noelle</span>
+        <span className="font-abril text-2xl text-white">Kayla Noelle</span>
         <button
           onClick={() => setMenuOpen(false)}
           className="text-4xl text-white focus:outline-none cursor-pointer"

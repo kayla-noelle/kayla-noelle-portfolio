@@ -35,7 +35,7 @@ const experience = [
 
 
 export default function About() {
-  const skills = [" JavaScript ", "TypeScript", "React", "Shopify", "Design Systems", "Figma", "Adobe Creative Cloud", "Visual Design", "UI/UX", "Front End Development"];
+  const skills = [" JavaScript ", "TypeScript", "React", "Shopify", "Design Systems", "Figma", "Adobe Creative Cloud", "Visual Design", "UI/UX", "Web Design"];
   const [openIndex, setOpenIndex] = useState<number | null>(null);
     return (
       <section id="about" className="py-8 bg-[#fffcf3] min-h-screen">
@@ -48,7 +48,7 @@ export default function About() {
 
       {/* Text */}
       <div className="text-left">
-        <h2 className="font-epilogue text-5xl font-bold text-[#1c1c1c] mb-3 animate-slide-left-fade">
+        <h2 className="font-abril text-5xl font-normal text-[#1c1c1c] mb-3 animate-slide-left-fade">
           So, who am I?
         </h2>
         <p className="font-inter text-[#1c1c1c] leading-relaxed">
@@ -75,7 +75,7 @@ export default function About() {
                   </div>
               {/* Experience */}
               <div>
-                <h2 className="text-4xl font-bold mb-8 mt-8 text-[#1c1c1c] text-center animate-slide-left-fade">
+                <h2 className="font-abril text-4xl font-normal mb-8 mt-8 text-[#1c1c1c] text-center animate-slide-left-fade">
                   Experience
                 </h2>
                 <div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
