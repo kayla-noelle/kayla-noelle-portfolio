@@ -4,6 +4,7 @@ import "./index.css"
 import Navbar from "./components/Navbar.tsx";
 import MobileMenu from "./components/MobileMenu.tsx";
 import Home from "./components/sections/Home.tsx";
+import StackSection from "./components/StackSection.tsx";
 import { useState } from "react";
 import About from "./components/sections/About.tsx";
 import Projects from "./components/sections/Projects.tsx";
@@ -16,14 +17,19 @@ import { Toaster } from "react-hot-toast";
   return (
     <>
     {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />} {" "}
-      <div className={`min-h-screen transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"} bg-black text-gray-100`}>
+      <div className={`min-h-screen transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"} bg-[#7C0116] text-gray-100`}>
         <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-        <Home isLoaded={isLoaded}  />
-        <Projects />
-        <About />
-        <Contact />
-        <Footer />
+        {/* Each StackSection pins in place while the next one slides over it */}
+        <StackSection>
+          <Home isLoaded={isLoaded}  />
+        </StackSection>
+        <StackSection><Projects /></StackSection>
+        <StackSection><About /></StackSection>
+        <StackSection>
+          <Contact />
+          <Footer />
+        </StackSection>
         <Toaster position="top-right" reverseOrder={false} />
       </div>
 

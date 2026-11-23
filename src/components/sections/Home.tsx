@@ -1,3 +1,6 @@
+import profilePicture from "../../assets/Editorial Grayscale Portrait with Soft Window Light.png";
+import { RESUME_URL } from "../../constants";
+
 interface HomeProps {
   isLoaded: boolean;
 }
@@ -6,57 +9,65 @@ export default function Home({ isLoaded }: HomeProps) {
   const slideUp = isLoaded ? "animate-slide-up-fade" : "opacity-0";
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative bg-[#fffcf3] py-16 md:py-0">
-      <div className="text-left z-10 pl-4 pr-6 md:px-4 py-10 md:py-0 w-fit max-w-full mx-auto md:mx-0">
-        <div className="bg-gradient pointer-events-none" aria-hidden="true">
-          <div className="absolute inset-0 top-[50px] flex justify-center">
-            <div className="bg-shape1 bg-[#9342fc] opacity-50 bg-blur"></div>
-            <div className="bg-shape2 bg-[#f06c9b] opacity-50 bg-blur"></div>
-            <div className="bg-shape3 bg-fuchsia-400 opacity-50 bg-blur"></div>
-            <div className="bg-shape2 bg-[oklch(94.5%_0.129_101.54)] opacity-50 bg-blur" style={{ animationDelay: '-5s' }}></div>
-          </div>
-        </div>
-
-        <div className="relative z-10 flex items-stretch gap-3 md:gap-6 mb-6 justify-center md:justify-start">
-          <div className="flex flex-col">
+    <section id="home" className="w-full min-h-screen flex items-center relative bg-[#E0A4B0] pt-28 pb-16 lg:pt-24 lg:pb-12 overflow-hidden">
+      <div className="relative z-10 w-full px-6 md:px-12 lg:px-16 flex flex-col lg:flex-row items-center lg:items-center gap-10 lg:gap-12">
+        {/* Left: text (~80%) */}
+        <div className="w-full lg:flex-1 lg:min-w-0 text-left">
+          <div className="flex flex-col mb-6">
             <div className="flex items-baseline">
               <h1
-                className={`font-abril font-normal text-7xl md:text-[11rem] tracking-tight leading-none text-[#1c1c1c] ${slideUp}`}
+                className={`font-abril font-normal text-6xl md:text-[11vw] lg:text-[8.5vw] xl:text-[11vw] 2xl:text-[12vw] tracking-tight leading-none text-[#7C0116] ${slideUp}`}
                 style={{ animationDelay: '100ms' }}
               >
                 Designer
               </h1>
               <span
-                className={`font-abril font-normal text-7xl md:text-[11rem] tracking-tight leading-none text-[#1c1c1c] ml-[0.25em] ${slideUp}`}
+                className={`font-abril font-normal text-6xl md:text-[11vw] lg:text-[8.5vw] xl:text-[11vw] 2xl:text-[12vw] tracking-tight leading-none text-[#7C0116] ml-[0.25em] ${slideUp}`}
                 style={{ animationDelay: '150ms' }}
               >
                 &
               </span>
             </div>
             <h1
-              className={`font-abril font-normal text-7xl md:text-[11rem] text-[#1c1c1c] tracking-tight leading-none -mt-4 md:-mt-8 ml-[0.35em] ${slideUp}`}
+              className={`font-abril font-normal text-6xl md:text-[11vw] lg:text-[8.5vw] xl:text-[11vw] 2xl:text-[12vw] text-[#7C0116] tracking-tight leading-none -mt-[0.08em] ml-[0.35em] ${slideUp}`}
               style={{ animationDelay: '200ms' }}
             >
               Developer
             </h1>
           </div>
-        </div>
-        <p className={`relative z-10 font-inter text-[16px] md:text-[24px] text-[#1c1c1c] text-left mb-4 w-0 min-w-full ${slideUp}`} style={{ animationDelay: '300ms' }}>
-          Hi, I'm Kayla Noelle and I'm a UI designer and Front End Developer based in Los Angeles, CA. I long to inspire brands and companies to captivate their users with stunning digital experiences.
-        </p>
-        <div className="relative z-10 flex items-center gap-4 mt-2">
-          <a
-            href="/Chavez_Kayla_Resume_.pdf"
-            download
-            className="inline-flex items-center gap-1.5 px-6 py-3 bg-[#F27D48] text-[#1c1c1c] font-inter font-semibold rounded-full hover:bg-[#E06A35] transition-colors"
+
+          <p
+            className={`font-montserrat text-[16px] text-[#7C0116] max-w-3xl mb-8 ${slideUp}`}
+            style={{ animationDelay: '300ms' }}
           >
-            Download Resume
-            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-          </a>
-          <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse shrink-0 shadow-[0_0_8px_3px_rgba(34,197,94,0.7)]"></span>
-            <span className="font-inter text-sm text-[#1c1c1c]/70">Open to opportunities</span>
+            Web Designer and Developer based in Los Angeles, helping brands and companies captivate their users with stunning digital experiences.
+          </p>
+
+          <div className={`flex flex-wrap items-center gap-4 ${slideUp}`} style={{ animationDelay: '400ms' }}>
+            <a
+              href="#projects"
+              className="inline-flex items-center px-6 py-3 rounded-none bg-[#7C0116] text-[#E0A4B0] border-2 border-[#7C0116] font-montserrat font-semibold hover:bg-[#5e0111] hover:border-[#5e0111] transition-colors"
+            >
+              View my Work
+            </a>
+            <a
+              href={RESUME_URL}
+              download
+              className="inline-flex items-center gap-1.5 px-6 py-3 rounded-none bg-[#E0A4B0] text-[#7C0116] border-2 border-[#7C0116] font-montserrat font-semibold hover:bg-[#ebbcc5] transition-colors"
+            >
+              Download my Resume
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+            </a>
           </div>
+        </div>
+
+        {/* Right: photo */}
+        <div className={`shrink-0 w-full max-w-[384px] lg:w-[384px] ${slideUp}`} style={{ animationDelay: '250ms' }}>
+          <img
+            src={profilePicture}
+            alt="Kayla Noelle"
+            className="w-full aspect-[4/5] object-cover object-center rounded-none"
+          />
         </div>
       </div>
     </section>

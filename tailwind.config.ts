@@ -13,7 +13,7 @@ module.exports = {
         epilogue:['Epilogue', "sans-serif"],
         grotesque:['Darker Grotesque', "sans-serif"],
         mono:['IBMPlex-Mono', "sans-serif"],
-        inter:['Inter', "sans-serif"]
+        montserrat:['Montserrat', "sans-serif"]
       },
       keyframes: {
          'slide-line': {

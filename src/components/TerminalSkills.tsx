@@ -58,7 +58,7 @@ export const TerminalSkills = (): JSX.Element => {
   }, [charIndex, typingCommand, lines, stepIndex]);
 
   return (
-    <div className="terminal-box text-left font-inter">
+    <div className="terminal-box text-left font-montserrat">
       {lines.map((line, idx) => {
         const isCurrentLine = idx === lines.length - 1;
         return (

@@ -1,53 +1,217 @@
-import { RevealOnScroll } from "../RevealOnScroll";
-// Resume Section will change it to Projects Section
+import { useEffect, useRef, useState } from "react";
+
+type Project = {
+  name: string;
+  description: string;
+  tags: string[];
+  url?: string;
+};
+
+const projects: Project[] = [
+  {
+    name: "That Pizza Place",
+    description: "Redesigning a beloved Carlsbad pizza place website",
+    tags: ["React", "JavaScript", "Tailwind CSS", "Claude"],
+    url: "https://majestic-begonia-ac7c57.netlify.app/",
+  },
+  {
+    name: "Tubby Todd",
+    description: "Contributed to Tubby Todd's e-commerce experience",
+    tags: ["Shopify", "Liquid", "JavaScript"],
+    url: "https://tubbytodd.com/",
+  },
+  { name: "Esker Beauty", description: "Coming Soon", tags: [] },
+  { name: "Preserve Magazine", description: "Coming Soon", tags: [] },
+];
+
+const RED = "#7C0116";
+
 export default function Projects() {
-  return(
-    <section id="projects" className="py-16 flex flex-col items-center justify-center p-8 bg-[#fffcf3]">
-      <RevealOnScroll>
-        <h2 className="text-[#1c1c1c] font-abril text-4xl font-normal mb-8">Work</h2>
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div
-              className="p-6 rounded-2xl hover:-translate-y-1 transition-all border border-[#0d0a07]"
-            >
-              <h3 className="text-xl font-bold mb-2">
-                <a href="https://majestic-begonia-ac7c57.netlify.app/" target="_blank" rel="noopener noreferrer" className="btn-border-reveal inline-flex items-center gap-1 text-sm md:text-base">That Pizza Place<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
-              </h3>
-              <p className="font-inter text-[#1c1c1c] mb-4">Redesigning a beloved Carlsbad pizza place website</p>
-               {["React", "JavaScript", "Tailwind CSS", "Claude"].map((tech, key) => (
-                <span key={key} className="inline-block bg-[#0d0a07] font-inter font-semibold text-white px-3 py-1 rounded-full text-sm mr-2 mb-2">
-                  {tech}
-                </span>
-              ))}
-            </div>
-            <div
-              className="p-6 rounded-2xl hover:-translate-y-1 transition-all border border-[#0d0a07]"
-            >
-              <h3 className="text-xl font-bold mb-2">
-                <a href="https://tubbytodd.com/" target="_blank" rel="noopener noreferrer" className="btn-border-reveal inline-flex items-center gap-1 text-sm md:text-base">Tubby Todd<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
-              </h3>
-              <p className="font-inter text-[#1c1c1c] mb-4">Contributed to Tubby Todd's e-commerce experience</p>
-               {["Shopify", "Liquid", "JavaScript"].map((tech, key) => (
-                <span key={key} className="inline-block bg-[#0d0a07] font-inter font-semibold text-white px-3 py-1 rounded-full text-sm mr-2 mb-2">
-                  {tech}
-                </span>
-              ))}
-            </div>
-            {["Esker Beauty", "Spooge"].map((name) => (
-              <div
-                key={name}
-                className="p-6 rounded-2xl hover:-translate-y-1 transition-all border border-[#0d0a07]"
+  const [active, setActive] = useState(0);
+  const activeRef = useRef(0);
+  const viewportRef = useRef<HTMLDivElement>(null);
+  const cardRefs = useRef<(HTMLElement | null)[]>([]);
+  // While a click/arrow is smooth-scrolling the carousel, don't let the
+  // scroll position overwrite the project that was picked.
+  const autoScrolling = useRef<number | undefined>(undefined);
+  // Mouse drag-to-scroll state.
+  const drag = useRef({ down: false, startX: 0, startScroll: 0, moved: false });
+
+  const setActiveIndex = (index: number) => {
+    activeRef.current = index;
+    setActive(index);
+  };
+
+  // Click a card, number or the arrow: scroll that card to the left edge.
+  const select = (index: number) => {
+    const viewport = viewportRef.current;
+    const card = cardRefs.current[index];
+    setActiveIndex(index);
+    if (!viewport || !card) return;
+    window.clearTimeout(autoScrolling.current);
+    autoScrolling.current = window.setTimeout(() => (autoScrolling.current = undefined), 700);
+    viewport.scrollTo({ left: card.offsetLeft, behavior: "smooth" });
+  };
+
+  const next = () => select((activeRef.current + 1) % projects.length);
+
+  // Swipe / trackpad / drag: the counter follows how far along the carousel is.
+  const onScroll = () => {
+    const viewport = viewportRef.current;
+    if (!viewport || autoScrolling.current !== undefined) return;
+    const max = viewport.scrollWidth - viewport.clientWidth;
+    const progress = max > 0 ? viewport.scrollLeft / max : 0;
+    const index = Math.round(progress * (projects.length - 1));
+    if (index !== activeRef.current) setActiveIndex(index);
+  };
+
+  // Touch and trackpads scroll natively; this adds click-and-drag for a mouse.
+  const onPointerDown = (e: React.PointerEvent) => {
+    if (e.pointerType !== "mouse" || e.button !== 0 || !viewportRef.current) return;
+    drag.current = { down: true, startX: e.clientX, startScroll: viewportRef.current.scrollLeft, moved: false };
+  };
+
+  useEffect(() => {
+    const onMove = (e: PointerEvent) => {
+      const d = drag.current;
+      const viewport = viewportRef.current;
+      if (!d.down || !viewport) return;
+      const dx = e.clientX - d.startX;
+      if (Math.abs(dx) > 5) d.moved = true;
+      if (d.moved) viewport.scrollLeft = d.startScroll - dx;
+    };
+    const onUp = () => { drag.current.down = false; };
+    window.addEventListener("pointermove", onMove);
+    window.addEventListener("pointerup", onUp);
+    return () => {
+      window.removeEventListener("pointermove", onMove);
+      window.removeEventListener("pointerup", onUp);
+    };
+  }, []);
+
+  // A drag shouldn't also count as a click on a card or project link.
+  const onClickCapture = (e: React.MouseEvent) => {
+    if (drag.current.moved) {
+      e.preventDefault();
+      e.stopPropagation();
+      drag.current.moved = false;
+    }
+  };
+
+  const pad = (n: number) => String(n + 1).padStart(2, "0");
+
+  return (
+    <section id="projects" className="bg-[#FFF8D5] py-20 md:py-28 overflow-hidden text-left">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 pl-6 md:pl-12 lg:pl-16">
+          {/* Left column: heading top-left, counter bottom-left */}
+          <div className="flex flex-col justify-between gap-12 pr-6 lg:pr-0 lg:w-[340px] shrink-0">
+            <div>
+              <p className="font-montserrat font-semibold uppercase tracking-[0.2em] text-sm text-[#7C0116] mb-3">
+                Featured Projects
+              </p>
+              <h2 className="font-abril font-normal text-5xl md:text-6xl leading-none text-[#7C0116]">
+                Selected Work
+              </h2>
+              <button
+                type="button"
+                onClick={next}
+                aria-label="Next project"
+                className="mt-8 block cursor-pointer transition-transform hover:translate-x-1"
               >
-                <h3 className="text-xl font-bold mb-2">
-                  {/* Static pill (no link yet) styled to match the project buttons */}
-                  <span className="inline-flex items-center px-6 py-3 rounded-full border border-[#1c1c1c]/20 font-unica font-medium text-sm md:text-base text-[#1c1c1c]">{name}</span>
-                </h3>
-                <p className="font-inter text-[#1c1c1c] mb-4">Coming Soon</p>
-              </div>
-            ))}
+                <svg width="104" height="48" viewBox="0 0 104 48" fill="none" aria-hidden="true">
+                  <circle cx="24" cy="24" r="24" fill="#E0A4B0" />
+                  <circle cx="24" cy="24" r="4" fill={RED} />
+                  <line x1="24" y1="24" x2="100" y2="24" stroke={RED} strokeWidth="2" />
+                  <polyline points="92,17 100,24 92,31" stroke={RED} strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Counter: 01 —— 02 03 04 */}
+            <div className="flex items-end gap-4 text-[#7C0116]" role="tablist" aria-label="Projects">
+              {projects.map((project, i) => (
+                <div key={project.name} className="flex items-end gap-4">
+                  <button
+                    type="button"
+                    role="tab"
+                    aria-selected={i === active}
+                    aria-label={project.name}
+                    onClick={() => select(i)}
+                    className={`font-abril leading-none cursor-pointer transition-all duration-300 ${
+                      i === active ? "text-5xl opacity-100" : "text-lg opacity-40 hover:opacity-70"
+                    }`}
+                  >
+                    {pad(i)}
+                  </button>
+                  {i === active && i < projects.length - 1 && (
+                    <span className="block w-12 h-px bg-[#7C0116] mb-2" aria-hidden="true" />
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Carousel: runs off the right edge of the screen */}
+          <div
+            ref={viewportRef}
+            onScroll={onScroll}
+            onPointerDown={onPointerDown}
+            onClickCapture={onClickCapture}
+            onDragStart={(e) => e.preventDefault()}
+            className="relative flex-1 min-w-0 overflow-x-auto overscroll-x-contain select-none cursor-grab active:cursor-grabbing [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          >
+            <div className="flex gap-6 w-max">
+              {projects.map((project, i) => (
+                <article
+                  key={project.name}
+                  ref={(el) => { cardRefs.current[i] = el; }}
+                  onClick={() => select(i)}
+                  className="shrink-0 w-[260px] md:w-[320px] cursor-pointer text-[#7C0116]"
+                >
+                  {/* Portrait image placeholder */}
+                  <div
+                    className={`aspect-[4/5] w-full flex flex-col items-center justify-center gap-2 bg-[#E0A4B0]/40 border transition-colors ${
+                      i === active ? "border-[#7C0116]" : "border-[#7C0116]/20"
+                    }`}
+                  >
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="opacity-50" aria-hidden="true">
+                      <rect x="3" y="3" width="18" height="18" />
+                      <circle cx="8.5" cy="8.5" r="1.5" />
+                      <polyline points="21 15 16 10 5 21" />
+                    </svg>
+                    <span className="font-montserrat text-xs uppercase tracking-widest opacity-50">Image coming soon</span>
+                  </div>
+
+                  <div className="pt-5">
+                    <h3 className="font-abril text-2xl mb-2">
+                      {project.url ? (
+                        <a
+                          href={project.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 hover:underline"
+                        >
+                          {project.name}
+                          <svg xmlns="http://www.w3.org/2000/svg" width="0.7em" height="0.7em" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                        </a>
+                      ) : (
+                        project.name
+                      )}
+                    </h3>
+                    <p className="font-montserrat text-[15px] mb-4">{project.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map((tag) => (
+                        <span key={tag} className="font-montserrat font-semibold text-xs px-3 py-1 border border-[#7C0116]">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
-      </RevealOnScroll>
     </section>
-  )
+  );
 }
