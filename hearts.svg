@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <rect width="24" height="24" rx="3" fill="#0d0a07"/>
-  <text x="12" y="17.5" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="16" fill="#ffffff">K</text>
+  <rect width="24" height="24" fill="#7C0116"/>
+  <!-- "K" in Abril Fatface, converted to a shape so it renders without the font -->
+  <path fill="#E0A4B0" d="M5.02 5.38L5.02 5L11.12 5L11.12 5.38L10.02 5.38L10.02 11.70L10.18 11.66L15.82 5.38L14.24 5.38L14.24 5L17.74 5L17.74 5.38L16.54 5.38L13.10 9.22L17.90 18.62L18.98 18.62L18.98 19L12.56 19L12.56 18.62L13.50 18.62L10.20 12.24L10.02 12.28L10.02 18.62L11.12 18.62L11.12 19L5.02 19L5.02 18.62L6.12 18.62L6.12 5.38L5.02 5.38Z"/>
 </svg>
