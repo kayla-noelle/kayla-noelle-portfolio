@@ -38,7 +38,9 @@ const experience = [
 export default function About() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
     return (
-      <section id="about" className="py-8 bg-[#FFF8D5] text-[#7C0116] min-h-screen">
+      <section id="about" className="pb-8 bg-[#FFF8D5] text-[#7C0116] min-h-screen">
+      {/* Pink intro band, matching the homepage hero */}
+      <div className="bg-[#E0A4B0] py-8">
       <div className="max-w-6xl mx-auto px-4">
           <div
             className="rounded-2xl mb-8 p-8 md:p-12 transition-all hover:-translate-y-1"
@@ -60,6 +62,7 @@ export default function About() {
 
     </div>
   </div>
+</div>
 </div>
               <SkillsMarquee />
               {/* Experience */}

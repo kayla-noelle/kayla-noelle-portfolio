@@ -1,28 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-
-type Project = {
-  name: string;
-  description: string;
-  tags: string[];
-  url?: string;
-};
-
-const projects: Project[] = [
-  {
-    name: "That Pizza Place",
-    description: "Redesigning a beloved Carlsbad pizza place website",
-    tags: ["React", "JavaScript", "Tailwind CSS", "Claude"],
-    url: "https://majestic-begonia-ac7c57.netlify.app/",
-  },
-  {
-    name: "Tubby Todd",
-    description: "Contributed to Tubby Todd's e-commerce experience",
-    tags: ["Shopify", "Liquid", "JavaScript"],
-    url: "https://tubbytodd.com/",
-  },
-  { name: "Esker Beauty", description: "Coming Soon", tags: [] },
-  { name: "Preserve Magazine", description: "Coming Soon", tags: [] },
-];
+import { Link } from "react-router-dom";
+// Project data now lives in src/data/projects.ts (shared with /work and /work/:slug).
+import { projects } from "../../data/projects";
+import ProjectImage from "../ProjectImage";
 
 const RED = "#7C0116";
 
@@ -125,6 +105,12 @@ export default function Projects() {
                   <polyline points="92,17 100,24 92,31" stroke={RED} strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </button>
+              <Link
+                to="/work"
+                className="mt-6 inline-block font-montserrat font-semibold uppercase tracking-[0.2em] text-sm text-[#7C0116] hover:underline"
+              >
+                View all work
+              </Link>
             </div>
 
             {/* Counter: 01 —— 02 03 04 */}
@@ -168,35 +154,24 @@ export default function Projects() {
                   onClick={() => select(i)}
                   className="shrink-0 w-[260px] md:w-[320px] cursor-pointer text-[#7C0116]"
                 >
-                  {/* Portrait image placeholder */}
-                  <div
-                    className={`aspect-[4/5] w-full flex flex-col items-center justify-center gap-2 bg-[#E0A4B0]/40 border transition-colors ${
+                  {/* Portrait image (placeholder until the project has one) */}
+                  <ProjectImage
+                    project={project}
+                    className={`aspect-[4/5] transition-colors ${
                       i === active ? "border-[#7C0116]" : "border-[#7C0116]/20"
                     }`}
-                  >
-                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="opacity-50" aria-hidden="true">
-                      <rect x="3" y="3" width="18" height="18" />
-                      <circle cx="8.5" cy="8.5" r="1.5" />
-                      <polyline points="21 15 16 10 5 21" />
-                    </svg>
-                    <span className="font-montserrat text-xs uppercase tracking-widest opacity-50">Image coming soon</span>
-                  </div>
+                  />
 
                   <div className="pt-5">
                     <h3 className="font-abril text-2xl mb-2">
-                      {project.url ? (
-                        <a
-                          href={project.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1 hover:underline"
-                        >
-                          {project.name}
-                          <svg xmlns="http://www.w3.org/2000/svg" width="0.7em" height="0.7em" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-                        </a>
-                      ) : (
-                        project.name
-                      )}
+                      <Link
+                        to={`/work/${project.slug}`}
+                        draggable={false}
+                        className="inline-flex items-center gap-1 hover:underline"
+                      >
+                        {project.name}
+                        <svg xmlns="http://www.w3.org/2000/svg" width="0.7em" height="0.7em" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                      </Link>
                     </h3>
                     <p className="font-montserrat text-[15px] mb-4">{project.description}</p>
                     <div className="flex flex-wrap gap-2">

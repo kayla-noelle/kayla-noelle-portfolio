@@ -1,4 +1,5 @@
 import { RESUME_URL } from "../constants";
+import SiteLink from "./SiteLink";
 
 export default function MobileMenu({ menuOpen, setMenuOpen }: { menuOpen: boolean; setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>
  }) {
@@ -26,10 +27,10 @@ export default function MobileMenu({ menuOpen, setMenuOpen }: { menuOpen: boolea
           &times;
         </button>
       </div>
-      <a href="#projects" onClick={() => setMenuOpen(false)} className={`font-montserrat font-normal text-2xl text-[#E0A4B0] mt-4 pb-4 px-8 w-full text-left transform transition-all duration-300 ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`} style={{ borderBottom: "1px solid rgba(224,164,176,0.3)" }}>Work</a>
-      <a href="#about" onClick={() => setMenuOpen(false)} className={`font-montserrat font-normal text-2xl text-[#E0A4B0] mt-4 pb-4 px-8 w-full text-left transform transition-all duration-300 ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`} style={{ borderBottom: "1px solid rgba(224,164,176,0.3)" }}>About</a>
+      <SiteLink to="/work" onClick={() => setMenuOpen(false)} className={`font-montserrat font-normal text-2xl text-[#E0A4B0] mt-4 pb-4 px-8 w-full text-left transform transition-all duration-300 ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`} style={{ borderBottom: "1px solid rgba(224,164,176,0.3)" }}>Work</SiteLink>
+      <SiteLink to="/about" onClick={() => setMenuOpen(false)} className={`font-montserrat font-normal text-2xl text-[#E0A4B0] mt-4 pb-4 px-8 w-full text-left transform transition-all duration-300 ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`} style={{ borderBottom: "1px solid rgba(224,164,176,0.3)" }}>About</SiteLink>
       <a href={RESUME_URL} target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)} className={`font-montserrat font-normal text-2xl text-[#E0A4B0] mt-4 pb-4 px-8 w-full text-left transform transition-all duration-300 ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`} style={{ borderBottom: "1px solid rgba(224,164,176,0.3)" }}>Resume</a>
-      <a href="#contact" onClick={() => setMenuOpen(false)} className={`font-montserrat font-normal text-2xl text-[#E0A4B0] mt-4 pb-4 px-8 w-full text-left transform transition-all duration-300 ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`} style={{ borderBottom: "1px solid rgba(224,164,176,0.3)" }}>Let's talk</a>
+      <SiteLink to="#contact" onClick={() => setMenuOpen(false)} className={`font-montserrat font-normal text-2xl text-[#E0A4B0] mt-4 pb-4 px-8 w-full text-left transform transition-all duration-300 ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`} style={{ borderBottom: "1px solid rgba(224,164,176,0.3)" }}>Let's talk</SiteLink>
       <div className={`absolute bottom-10 left-8 flex gap-6 transform transition-all duration-300 ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}>
         <a href="https://www.linkedin.com/in/kayla-noelle-chavez/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-[#E0A4B0]">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">

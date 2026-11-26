@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 
 import { RESUME_URL } from "../constants";
+import SiteLink from "./SiteLink";
 
 export default function Navbar({ menuOpen, setMenuOpen }: { menuOpen: boolean; setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>
  }) {
@@ -17,23 +18,23 @@ export default function Navbar({ menuOpen, setMenuOpen }: { menuOpen: boolean; s
         <div className="grid grid-cols-[1fr_auto_1fr] items-center h-16">
           {/* Left: Work / About */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#projects" className={linkClass}>Work</a>
-            <a href="#about" className={linkClass}>About</a>
+            <SiteLink to="/work" className={linkClass}>Work</SiteLink>
+            <SiteLink to="/about" className={linkClass}>About</SiteLink>
           </div>
           <div className="md:hidden" />
 
           {/* Center: name */}
-          <a href="#home" className="font-abril text-2xl text-[#E0A4B0] text-center">Kayla Noelle</a>
+          <SiteLink to="#home" className="font-abril text-2xl text-[#E0A4B0] text-center">Kayla Noelle</SiteLink>
 
           {/* Right: Resume + Let's talk */}
           <div className="hidden md:flex items-center justify-end space-x-6">
             <a href={RESUME_URL} target="_blank" rel="noopener noreferrer" className={linkClass}>Resume</a>
-            <a
-              href="#contact"
+            <SiteLink
+              to="#contact"
               className="px-5 py-2 rounded-none bg-[#E0A4B0] text-[#7C0116] font-montserrat font-semibold hover:bg-[#ebbcc5] transition-colors"
             >
               Let's talk
-            </a>
+            </SiteLink>
           </div>
           <div className="flex justify-end md:hidden">
             <button
